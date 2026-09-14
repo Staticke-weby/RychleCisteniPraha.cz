@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: "Blog"
+description: "Rady a tipy o čištění vozidel, interiérů, dlažeb a úklidu firem od Rychlé čištění Praha. Přečtěte si praktické návody, ceníky a zkušenosti z praxe."
+permalink: "/blog/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Blog" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Rady a tipy</p>
+    <h1>Blog o čištění a úklidu</h1>
+    <p class="page-hero__lead">Praktické rady, ceníky a zkušenosti z čištění vozidel, interiérů i firemních prostor.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="posts">
+      {% for a in collections.clanky %}
+      <article class="post-card">
+        <a class="post-card__link" href="{{ a.url }}">
+          <div class="post-card__media">{% picture a.data.image, a.data.title, "", "(max-width: 620px) 100vw, 50vw", "lazy" %}</div>
+          <div class="post-card__body">
+            <p class="post-card__meta">{% icon "clock" %} {{ a.data.date | czDate }}</p>
+            <h2 class="post-card__title">{{ a.data.title }}</h2>
+            <p>{{ a.data.excerpt }}</p>
+            <span class="card__more">Číst článek {% icon "arrow" %}</span>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

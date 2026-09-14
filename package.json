@@ -1,0 +1,22 @@
+{
+  "name": "rychlecistenipraha",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Statický web Rychlé čištění Praha – 11ty, čisté CSS3, SVG, minimum vanilla JS",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\"",
+    "images": "node scripts/build-images.mjs",
+    "variants": "python scripts/make-variants.py",
+    "icons": "python scripts/make-icons.py",
+    "og": "python scripts/make-og-image.py",
+    "typography": "node scripts/typography.mjs",
+    "check": "node scripts/check-links.mjs",
+    "audit:meta": "node scripts/audit-meta.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

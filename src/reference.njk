@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+title: "Reference"
+description: "Co o nás říkají zákazníci – reference a spolupracující firmy Rychlé čištění Praha. Podívejte se, s kým spolupracujeme a proč se k nám vracejí."
+permalink: "/reference/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Reference" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Reference</p>
+    <h1>Co o nás říkají zákazníci</h1>
+    <p class="page-hero__lead">Spokojení zákazníci jsou naší nejlepší reklamou. Podívejte se, s kým spolupracujeme a co o nás říkají.</p>
+  </div>
+</section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose reference-intro">
+        <p>Rychlé čištění Praha působí na trhu už 6 let. Za tu dobu jsme vyčistili přes 3 000 vozidel – od osobních aut a dodávek přes kamiony a autobusy až po stavební stroje. Jen osobně jsme se postarali o více než 2 500 kabin kamionů a stovky osobních vozů.</p>
+        <p>Pracujeme pro dopravce, SVJ, developerské firmy i domácnosti. Zakládáme si na tom, že přijedeme včas, odvedeme práci poctivě a domluvíme se srozumitelně – proto se k nám zákazníci vracejí a doporučují nás dál.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container">
+      <div class="testimonials">
+      {% for item in collections.reference %}
+      <blockquote class="testimonial">
+        <span class="testimonial__stars" aria-hidden="true">{% icon "star" %}{% icon "star" %}{% icon "star" %}{% icon "star" %}{% icon "star" %}</span>
+        <p>{{ item.templateContent | striptags | trim }}</p>
+        <footer>— {{ item.data.author }}</footer>
+      </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <h2 class="section__title">{{ home.clients.title }}</h2>
+    </header>
+    <ul class="clients__list">
+      {% for client in home.clients.list %}
+      <li>{{ client }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": {{ (site.domain + "/#organization") | dump | safe }},
+  "name": {{ site.name | dump | safe }},
+  "url": {{ site.domain | dump | safe }},
+  "review": [
+    {% for item in collections.reference %}
+    {
+      "@type": "Review",
+      "reviewBody": {{ (item.templateContent | striptags | trim) | dump | safe }},
+      "author": { "@type": {{ item.data.authorType | default("Person") | dump | safe }}, "name": {{ item.data.author | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{% include "partials/cta.njk" %}

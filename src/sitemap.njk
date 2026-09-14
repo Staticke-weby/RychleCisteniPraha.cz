@@ -1,0 +1,23 @@
+---
+permalink: "/sitemap.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in collections.all %}
+{%- if item.url and item.url != "/404.html" and item.url != "/sitemap.xml" and item.url != "/robots.txt" %}
+{%- if not (item.url != "/temata/" and item.url.startsWith("/temata/")) %}
+  <url>
+    <loc>{{ site.domain }}{{ item.url }}</loc>
+    <lastmod>{{ item.date | isoDate }}</lastmod>
+  </url>
+{%- endif %}
+{%- endif %}
+{%- endfor %}
+{%- for tag in taxonomy %}
+  <url>
+    <loc>{{ site.domain }}/temata/{{ tag.slug }}/</loc>
+    <lastmod>{{ "" | isoNow }}</lastmod>
+  </url>
+{%- endfor %}
+</urlset>

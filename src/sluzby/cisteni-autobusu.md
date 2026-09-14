@@ -1,0 +1,66 @@
+---
+title: "Čištění autobusů – pro dopravce i soukromníky"
+navTitle: "Autobusy"
+category: "cisteni-vozidel"
+image: "cisteni-autobusu"
+cardImage: "card-cisteni-vozidel"
+excerpt: "Zajistěte cestujícím čisté a voňavé prostředí. Tepování sedadel, podlah i prostoru řidiče."
+listTitle: "Seznam úkonů"
+list:
+  - "Hloubkové tepování všech sedadel (textil i kůže + impregnace)"
+  - "Čištění podlah, schodů, madel, stolků a konzolí"
+  - "Čištění stropu a panelů nad sedadly"
+  - "Mytí a leštění oken"
+  - "Čištění palubní části řidiče"
+  - "Dezinfekce kufrových prostor"
+  - "Provonění"
+pricing:
+  title: "Ceník"
+  items:
+    - label: "Malý autobus"
+      price: "od 7 000 Kč"
+    - label: "Linkový autobus"
+      price: "od 8 500 Kč"
+    - label: "Zájezdový autobus"
+      price: "od 11 000 Kč"
+  note: "Individuálně dle typu a počtu míst. Nutno objednat 7 dní předem. Bez vody a elektřiny + 1 000 Kč. Doba čištění: 5–10 hodin."
+cta: "Objednat čištění autobusu"
+order: 4
+topics:
+  - "myti-vozidel"
+  - "cisteni-interieru-vozu"
+  - "tepani"
+  - "dezinfekce"
+audience:
+  - "Dopravci a autobusové společnosti"
+  - "Školy a organizace s vlastním autobusem"
+  - "Cestovní kanceláře a zájezdoví dopravci"
+  - "Soukromí majitelé autobusů"
+process:
+  - title: "Dohoda a harmonogram"
+    text: "Objednávku potvrdíme alespoň 7 dní předem a sladíme ji s vaším provozem."
+  - title: "Příprava a vyklizení"
+    text: "Připravíme vůz a doporučíme vyklizení; u linkových autobusů zvolíme balíček na míru."
+  - title: "Tepování a mytí"
+    text: "Vytepeme sedačky, umyjeme podlahy, schody, madla a okna."
+  - title: "Řidič a dezinfekce"
+    text: "Vyčistíme prostor řidiče, vydezinfikujeme kufry a provoníme."
+priceFactors:
+  - "Typ autobusu (malý, linkový, zájezdový)"
+  - "Počet míst a rozsah"
+  - "Dostupnost vody a elektřiny (+1 000 Kč)"
+  - "Míra znečištění"
+equipment: "Pracujeme s tepovací a parní technikou, která zvládne velké plochy i stovky sedadel."
+faq:
+  - q: "Jak dopředu je potřeba čištění objednat?"
+    a: "Autobus doporučujeme objednat alespoň 7 dní předem, zejména u větších vozů a zájezdových autobusů. Termín sladíme s vaším jízdním řádem tak, aby byl provoz omezen co nejméně."
+  - q: "Čistíte i za provozu dopravce?"
+    a: "Ano, harmonogram přizpůsobíme vašemu provozu – často pracujeme v noci nebo o víkendu. Cílem je, aby autobus byl ráno připravený a výpadky byly co nejmenší."
+  - q: "Zvládnete balíček jen na sedadla?"
+    a: "Ano, pro linkové autobusy nabízíme balíčky na míru, například jen tepování sedadel a mytí oken. Rozsah vždy nastavíme podle toho, co autobus nejvíc potřebuje a jaký máte rozpočet."
+  - q: "Jak dlouho čištění trvá?"
+    a: "Podle typu autobusu a rozsahu 5–10 hodin. U zájezdových autobusů s velkým počtem míst a kuchyněk se doba může prodloužit, proto vše plánujeme s předstihem."
+  - q: "Musí být autobus v depu?"
+    a: "Přijedeme tam, kde to provoz dovolí – klidně i do depa nebo na smluvně domluvené místo. Stačí zajistit přístup k vozidlu a ideálně i vodu a elektřinu."
+---
+Zajistěte cestujícím čisté a voňavé prostředí. Nabízíme čištění autobusů v Praze, včetně tepování sedadel, čištění podlah, oken a prostoru řidiče. Pro linkové autobusy nabízíme speciální balíčky (např. jen tepování sedadel a mytí oken). Zajistíme i odstranění polepů či renovaci laku.

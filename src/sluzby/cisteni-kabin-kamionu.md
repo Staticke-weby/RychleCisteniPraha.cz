@@ -1,0 +1,67 @@
+---
+title: "Čištění kabin kamionů a nákladních vozů"
+navTitle: "Kamiony a nákladní vozy"
+category: "cisteni-vozidel"
+image: "cisteni-kabin-kamionu"
+cardImage: "card-cisteni-vozidel"
+excerpt: "Čistá kabina = příjemná jízda a vizitka firmy. Vyčistíme ji od podlahy po strop."
+listTitle: "Seznam úkonů"
+list:
+  - "Tepování sedaček"
+  - "Hloubkové čištění postele"
+  - "Čištění lednice (musí být vypnutá)"
+  - "Vysátí a vytření podlahy"
+  - "Čištění palubní desky a plastů"
+  - "Dezinfekce ventilace"
+  - "Čištění oken"
+  - "Odstranění reklamních polepů z kabiny (ne návěs)"
+pricing:
+  title: "Ceník"
+  items:
+    - label: "Cena"
+      price: "od 4 500 Kč"
+    - label: "Příplatek za silné znečištění"
+      price: "50–100 % dle stavu"
+    - label: "Bez elektřiny"
+      price: "+ 500 Kč"
+  note: "Nutné vyklizení kabiny (jinak příplatek 500 Kč). Doba čištění: cca 3–4 hodiny. Reklamace pouze při předání vozidla. Platba při převzetí vozidla, splatnosti neakceptujeme."
+cta: "Objednat čištění kamionu"
+order: 3
+topics:
+  - "myti-vozidel"
+  - "cisteni-interieru-vozu"
+  - "tepani"
+  - "dezinfekce"
+audience:
+  - "Dopravní firmy a spedice"
+  - "Majitelé kamionů a tahačů"
+  - "Řidiči kamionů"
+  - "Prodejci nákladních vozidel"
+process:
+  - title: "Příprava kabiny"
+    text: "Kabinu je nutné vyklidit, abychom se dostali na všechny plochy."
+  - title: "Vysátí a tepování"
+    text: "Vytepeme sedačky i lůžko, vysajeme a vytřeme podlahu."
+  - title: "Plasty a ventilace"
+    text: "Vyčistíme palubní desku a plasty a provedeme dezinfekci ventilace."
+  - title: "Okna a detaily"
+    text: "Vyleštíme okna, odstraníme polepy z kabiny a předáme."
+priceFactors:
+  - "Vyklizení kabiny"
+  - "Míra znečištění (příplatek 50–100 %)"
+  - "Dostupnost elektřiny (+500 Kč)"
+  - "Rozsah (lůžko, lednice, polepy)"
+equipment: "Používáme tepovače, parní čističe a dezinfekci ventilace; na odstranění polepů máme speciální prostředky."
+faq:
+  - q: "Vyčistíte i lůžkovou část kabiny?"
+    a: "Ano, součástí je hloubkové čištění postele, sedaček, palubní desky i podlahy. Čistíme od stropu po podlahu, včetně úložných prostor a ventilace, aby kabina byla připravená na další směnu."
+  - q: "Odstraníte reklamní polepy?"
+    a: "Polepy z kabiny odstraníme a lak vrátíme do původního stavu. Návěs neřešíme; kabinu je nutné před čištěním vyklidit, jinak se k polepům a plochám nedostaneme."
+  - q: "Proč musím kabinu vyklidit?"
+    a: "Vyklizená kabina nám umožní vyčistit všechny plochy od podlahy po strop. Pokud vyklizená není, účtujeme příplatek 500 Kč za manipulaci s věcmi a čas navíc."
+  - q: "Jak se platí?"
+    a: "Platba probíhá při převzetí vozidla, a to hotově nebo na fakturu pro stálé klienty. Splatnosti neakceptujeme, protože jde o jednorázovou službu na místě."
+  - q: "Jak dlouho čištění trvá?"
+    a: "Běžně 3–4 hodiny podle stavu kabiny a rozsahu. U silně znečištěných kabin se doba prodlužuje, proto termín i cenu vždy domlouváme individuálně."
+---
+Čistá kabina = příjemná jízda a vizitka firmy. Vyčistíme kabinu vašeho kamionu od podlahy po strop, včetně lůžkové části. Specializujeme se na čištění kamionů v Praze a okolí s dojezdem k vám.

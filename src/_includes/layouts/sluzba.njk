@@ -1,0 +1,217 @@
+---
+layout: layouts/base.njk
+---
+{% set category = category | categoryById %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ title | dump | safe }},
+  "description": {{ excerpt | dump | safe }},
+  "serviceType": {{ category.title | dump | safe }},
+  "url": {{ (site.domain + page.url) | dump | safe }},
+  "image": {{ (site.domain + images[image]) | dump | safe }},
+  "provider": { "@type": "LocalBusiness", "@id": {{ (site.domain + "/#organization") | dump | safe }} },
+  "areaServed": { "@type": "City", "name": "Praha" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Domů", "item": {{ (site.domain + "/") | dump | safe }} },
+    { "@type": "ListItem", "position": 2, "name": "Služby", "item": {{ (site.domain + "/sluzby/") | dump | safe }} },
+    { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": {{ (site.domain + page.url) | dump | safe }} }
+  ]
+}
+</script>
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+<article class="service">
+  <section class="page-hero">
+    <div class="container page-hero__grid">
+      <div class="page-hero__content">
+        {% include "partials/breadcrumbs.njk" %}
+        <p class="eyebrow">{{ category.title }}</p>
+        <h1>{{ title }}</h1>
+        <div class="page-hero__lead">{{ content | safe }}</div>
+        {% if topics %}{% include "partials/topic-chips.njk" %}{% endif %}
+        <div class="page-hero__actions">
+          <a class="btn btn--primary" href="tel:{{ site.phoneHref }}">{% icon "phone" %}<span>{{ site.phone }}</span></a>
+          <a class="btn btn--outline" href="mailto:{{ site.email }}?subject={{ title | urlencode }}">{% icon "mail" %}<span>Napsat poptávku</span></a>
+          <a class="btn btn--outline" href="https://wa.me/{{ site.whatsapp }}?text={{ ('Dobrý den, mám zájem o službu: ' + title) | urlencode }}" target="_blank" rel="noopener">{% icon "whatsapp" %}<span>WhatsApp</span></a>
+        </div>
+      </div>
+      <div class="page-hero__media">
+        {% picture image, title, "", "(max-width: 1024px) 100vw, 42vw", "eager", "high" %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container service__grid">
+      <div class="service__main prose">
+        {% if benefits %}
+        <h2>{{ benefitsTitle or "Výhody" }}</h2>
+        <ul class="check-list">
+          {% for item in benefits %}<li>{% icon "check" %}{{ item }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if list %}
+        <h2>{{ listTitle or "Seznam úkonů" }}</h2>
+        <ul class="check-list">
+          {% for item in list %}<li>{% icon "check" %}{{ item }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if groups %}
+        {% for group in groups %}
+        <div class="service__group">
+          <h2>{{ group.title }}</h2>
+          {% if group.list %}
+          <ul class="check-list">
+            {% for item in group.list %}<li>{% icon "check" %}{{ item }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+          {% if group.pricingItems %}
+          <h3>{% if group.listTitle %}{{ group.listTitle }}{% else %}Ceny{% endif %}</h3>
+          <table class="price-table">
+            <tbody>
+              {% for row in group.pricingItems %}
+              <tr><th scope="row">{{ row.label }}</th><td>{{ row.price }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+          {% if group.price %}<p class="service__price">{{ group.price }}</p>{% endif %}
+          {% if group.duration %}<p class="service__note">{{ group.duration }}</p>{% endif %}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if process %}
+        <h2>Jak čištění probíhá</h2>
+        <ol class="steps steps--compact">
+          {% for step in process %}
+          <li class="step">
+            <span class="step__num">{{ loop.index }}</span>
+            <h3 class="step__title">{{ step.title }}</h3>
+            <p class="step__text">{{ step.text }}</p>
+          </li>
+          {% endfor %}
+        </ol>
+        {% endif %}
+
+        {% if priceFactors %}
+        <h2>Co ovlivňuje cenu</h2>
+        <ul class="check-list">
+          {% for f in priceFactors %}<li>{% icon "check" %}{{ f }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if equipment %}
+        <h2>Technika a chemie</h2>
+        <p>{{ equipment }}</p>
+        {% endif %}
+
+        {% set locSlugs = category.id | localitiesFor %}
+        {% if locSlugs.length %}
+        {% set locs = collections.lokality | bySlug(locSlugs) %}
+        <p class="service__localities">Tuto službu zajišťujeme v celé Praze a okolí – například v lokalitách {% for l in locs %}<a href="{{ l.url }}">{{ l.data.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %} nebo v <a href="/lokality/">dalších lokalitách</a>.</p>
+        {% endif %}
+
+        {% if audience %}
+        <h2>Pro koho je služba vhodná</h2>
+        <ul class="check-list">
+          {% for a in audience %}<li>{% icon "check" %}{{ a }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if faq %}
+        <h2>Časté dotazy k této službě</h2>
+        <div class="faq">
+          {% for item in faq %}
+          <details class="faq__item">
+            <summary class="faq__q">{{ item.q }}</summary>
+            <div class="faq__a prose">{{ item.a }}</div>
+          </details>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if pricing %}
+      <aside class="service__aside">
+        <div class="price-box">
+          <h2 class="price-box__title">{{ pricing.title or "Ceník" }}</h2>
+          {% if pricing.items %}
+          <table class="price-table">
+            <tbody>
+              {% for row in pricing.items %}
+              <tr><th scope="row">{{ row.label }}</th><td>{{ row.price }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+          {% if pricing.text %}<p class="price-box__text">{{ pricing.text }}</p>{% endif %}
+          {% if pricing.note %}<p class="price-box__note">{{ pricing.note }}</p>{% endif %}
+          <a class="btn btn--primary btn--block" href="/kontakt/">{{ cta or "Objednat službu" }} {% icon "arrow" %}</a>
+        </div>
+      </aside>
+      {% elif cta %}
+      <aside class="service__aside">
+        <div class="price-box price-box--plain">
+          <h2 class="price-box__title">Máte zájem?</h2>
+          <p class="price-box__text">Ozvěte se nám a připravíme vám individuální nabídku na míru.</p>
+          <a class="btn btn--primary btn--block" href="/kontakt/">{{ cta }} {% icon "arrow" %}</a>
+        </div>
+      </aside>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container">
+      <header class="section__head">
+        <h2 class="section__title">Další služby v kategorii {{ category.title }}</h2>
+      </header>
+      <div class="cards cards--services">
+        {% for other in collections.sluzby %}
+          {% if other.data.category == category.id and other.url != page.url %}
+          <article class="card card--service">
+            <a class="card__link" href="{{ other.url }}">
+              <div class="card__media">
+                {% picture other.data.image, other.data.navTitle, "", "(max-width: 620px) 100vw, (max-width: 1024px) 50vw, 33vw", "lazy" %}
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">{{ other.data.navTitle }}</h3>
+                <p class="card__text">{{ other.data.excerpt }}</p>
+                <span class="card__more">Zobrazit detail {% icon "arrow" %}</span>
+              </div>
+            </a>
+          </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</article>
+
+{% include "partials/cta.njk" %}

@@ -1,0 +1,102 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: taxonomy
+  size: 1
+  alias: tema
+permalink: "/temata/{{ tema.slug }}/index.html"
+---
+{% set relatedServices = collections.sluzby | byTopic(tema.slug) %}
+{% set relatedArticles = collections.clanky | byTopic(tema.slug) %}
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set parentLabel = "Témata" %}{% set parentUrl = "/temata/" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Téma</p>
+    <h1>{{ tema.label }}</h1>
+    <p class="page-hero__lead">{{ tema.description }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="prose topic-intro">
+      {% for p in tema.intro %}<p>{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <header class="section__head">
+      <h2 class="section__title">Související služby</h2>
+    </header>
+    <div class="cards cards--services">
+      {% for s in relatedServices %}
+      {% set card = { url: s.url, image: s.data.image, title: s.data.navTitle, text: s.data.excerpt } %}
+      {% include "partials/service-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if relatedArticles.length %}
+<section class="section">
+  <div class="container">
+    <header class="section__head">
+      <h2 class="section__title">Související články</h2>
+    </header>
+    <div class="posts">
+      {% for a in relatedArticles %}
+      <article class="post-card">
+        <a class="post-card__link" href="{{ a.url }}">
+          <div class="post-card__media">{% picture a.data.image, a.data.title, "", "(max-width: 620px) 100vw, 50vw", "lazy" %}</div>
+          <div class="post-card__body">
+            <p class="post-card__meta">{% icon "clock" %} {{ a.data.date | czDate }}</p>
+            <h2 class="post-card__title">{{ a.data.title }}</h2>
+            <p>{{ a.data.excerpt }}</p>
+            <span class="card__more">Číst článek {% icon "arrow" %}</span>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if tema.faq %}
+<section class="section">
+  <div class="container">
+    <header class="section__head">
+      <h2 class="section__title">Časté dotazy k tématu</h2>
+    </header>
+    <div class="faq">
+      {% for item in tema.faq %}
+      <details class="faq__item">
+        <summary class="faq__q">{{ item[0] }}</summary>
+        <div class="faq__a prose">{{ item[1] }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in tema.faq %}
+    {
+      "@type": "Question",
+      "name": {{ item[0] | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item[1] | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{% include "partials/cta.njk" %}

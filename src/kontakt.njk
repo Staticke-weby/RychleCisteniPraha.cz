@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+title: "Kontakt"
+description: "Kontaktujte Rychlé čištění Praha – telefon, WhatsApp, e-mail. Provozní doba Po–Ne 7:00–21:00, celá Praha a okolí."
+permalink: "/kontakt/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Kontakt" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Ozvěte se nám</p>
+    <h1>Kontakt</h1>
+    <p class="page-hero__lead">Napište, zavolejte nebo napište na WhatsApp. Připravíme vám individuální nabídku a domluvíme termín.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact">
+    <div class="contact__primary">
+      <article class="contact-card">
+        <span class="contact-card__icon">{% icon "phone" %}</span>
+        <h2>Telefon / WhatsApp</h2>
+        <p><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></p>
+        <p><a class="btn btn--primary btn--sm" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener">{% icon "whatsapp" %}<span>Napsat na WhatsApp</span></a></p>
+      </article>
+      <article class="contact-card">
+        <span class="contact-card__icon">{% icon "mail" %}</span>
+        <h2>E-mail</h2>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </article>
+      <article class="contact-card">
+        <span class="contact-card__icon">{% icon "clock" %}</span>
+        <h2>Provozní doba</h2>
+        <p>{{ site.hours }}</p>
+        <p class="muted">Pracujeme i o víkendech a svátcích.</p>
+      </article>
+      <article class="contact-card">
+        <span class="contact-card__icon">{% icon "pin" %}</span>
+        <h2>Působnost</h2>
+        <p>{{ site.area }}</p>
+        <p class="muted">Do 100 km od Prahy zdarma při objednávce 2 a více vozů.</p>
+      </article>
+    </div>
+
+    <aside class="contact__aside">
+      <div class="contact-person">
+        {% picture "tym-radek-ingr", site.owner + ", " + site.ownerRole, "", "358px", "lazy" %}
+        <div class="contact-person__body">
+          <h2>{{ site.owner }}</h2>
+          <p>{{ site.ownerRole }}</p>
+          <p class="contact-person__social">
+            <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">{% icon "facebook" %}</a>
+            <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">{% icon "instagram" %}</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="billing prose">
+        <h2>Fakturační údaje</h2>
+        <p>
+          {{ site.address.company }}<br>
+          {{ site.address.street }}<br>
+          {{ site.address.city }}<br>
+          IČO: {{ site.address.ico }}
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

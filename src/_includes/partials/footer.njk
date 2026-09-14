@@ -1,0 +1,59 @@
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a class="brand brand--footer" href="/" aria-label="{{ site.name }} – domů">
+        <img src="{{ images.logo }}" width="282" height="75" alt="{{ site.name }}" loading="lazy">
+      </a>
+      <p class="footer__claim">{{ site.tagline }}</p>
+      <ul class="footer__social" aria-label="Sociální sítě">
+        <li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener">{% icon "facebook" %}<span>Facebook</span></a></li>
+        <li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener">{% icon "instagram" %}<span>Instagram</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h2 class="footer__title">Služby</h2>
+      <ul class="footer__links">
+        {% for category in categories %}
+        <li><a href="/sluzby/#{{ category.id }}">{{ category.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h2 class="footer__title">Rychlé odkazy</h2>
+      <ul class="footer__links">
+        <li><a href="/sluzby/">Všechny služby</a></li>
+        <li><a href="/lokality/">Lokality</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/fotogalerie/">Fotogalerie</a></li>
+        <li><a href="/reference/">Reference</a></li>
+        <li><a href="/faq/">Časté dotazy</a></li>
+        <li><a href="/mapa-stranek/">Mapa stránek</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h2 class="footer__title">Kontakt</h2>
+      <ul class="footer__contact">
+        <li>{% icon "phone" %}<a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+        <li>{% icon "whatsapp" %}<a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li>{% icon "mail" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li>{% icon "clock" %}<span>{{ site.hours }}</span></li>
+        <li>{% icon "pin" %}<span>{{ site.area }}</span></li>
+      </ul>
+      <p class="footer__legal">
+        {{ site.address.company }}<br>
+        {{ site.address.street }}<br>
+        {{ site.address.city }}<br>
+        IČO: {{ site.address.ico }}
+      </p>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>&copy; {{ site.name }} {% year %}. Všechna práva vyhrazena.</p>
+    <p>Tvorba webových stránek ♥ <a href="https://www.123stranky.cz/" target="_blank" rel="noopener">123stranky.cz</a></p>
+  </div>
+</footer>

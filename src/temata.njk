@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: "Témata"
+description: "Přehled témat čištění a úklidu – tepování, mytí vozidel, dezinfekce, tlakové čištění a další. Procházejte související služby a články."
+permalink: "/temata/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Témata" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Přehled témat</p>
+    <h1>Témata čištění a úklidu</h1>
+    <p class="page-hero__lead">Procházejte související služby a články podle témat.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cards cards--services">
+      {% for tag in taxonomy %}
+      <article class="card">
+        <a class="card__link" href="/temata/{{ tag.slug }}/">
+          <div class="card__body">
+            <h2 class="card__title">{{ tag.label }}</h2>
+            <p class="card__text">{{ tag.description }}</p>
+            <span class="card__more">Zobrazit téma {% icon "arrow" %}</span>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

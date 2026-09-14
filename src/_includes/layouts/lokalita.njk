@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+---
+<article class="service">
+  <section class="page-hero">
+    <div class="container page-hero__content">
+      {% set parentLabel = "Lokality" %}{% set parentUrl = "/lokality/" %}
+      {% include "partials/breadcrumbs.njk" %}
+      <p class="eyebrow">Lokalita</p>
+      <h1>{{ title }}</h1>
+      <p class="page-hero__lead">Mobilní čištění vozidel i úklidové služby v lokalitě {{ title }} – přijedeme až k vám. Do 100 km od Prahy je doprava zdarma při objednávce 2 a více vozů.</p>
+      <div class="page-hero__actions">
+        <a class="btn btn--primary" href="tel:{{ site.phoneHref }}">{% icon "phone" %}<span>{{ site.phone }}</span></a>
+        <a class="btn btn--outline" href="https://wa.me/{{ site.whatsapp }}?text={{ ('Dobrý den, mám zájem o čištění v lokalitě ' + title) | urlencode }}" target="_blank" rel="noopener">{% icon "whatsapp" %}<span>WhatsApp</span></a>
+      </div>
+      {% if topics %}{% include "partials/topic-chips.njk" %}{% endif %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose lokalita-intro">{{ content | safe }}</div>
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container">
+      <header class="section__head">
+        <h2 class="section__title">Služby v lokalitě {{ title }}</h2>
+        <p class="section__lead">{{ region }} – vyberte si službu, kterou potřebujete.</p>
+      </header>
+      <ul class="chips chips--links">
+        {% for s in collections.sluzby %}
+        <li><a class="chip" href="{{ s.url }}">{{ s.data.navTitle }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div class="prose">
+        <h2>Dojezd a doprava</h2>
+        <p>Do 100 km od Prahy je doprava zdarma při objednávce 2 a více vozů. Nad 100 km účtujeme 7 Kč/km. Zimní zahrady čistíme po celém území ČR.</p>
+      </div>
+      <div class="prose">
+        <h2>Proč právě my</h2>
+        <p>Mobilní čištění u zákazníka je náš standard. Pracujeme i o víkendech, od 7:00 do 21:00, a vždy se domluvíme na termínu, který vám vyhovuje.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ ("Mobilní čištění a úklid – " + title) | dump | safe }},
+  "serviceType": "Čištění a úklid",
+  "url": {{ (site.domain + page.url) | dump | safe }},
+  "provider": { "@type": "LocalBusiness", "@id": {{ (site.domain + "/#organization") | dump | safe }} },
+  "areaServed": {{ region | dump | safe }}
+}
+</script>
+
+{% include "partials/cta.njk" %}

@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+title: "Mapa stránek"
+description: "Přehled všech stránek webu Rychlé čištění Praha – služby, lokality, témata, blog a kontakt. Najděte rychle to, co potřebujete."
+permalink: "/mapa-stranek/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Mapa stránek" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Přehled</p>
+    <h1>Mapa stránek</h1>
+    <p class="page-hero__lead">Kompletní přehled obsahu webu – služby podle kategorií, lokality, témata, články i kontakt.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container sitemap">
+    <div class="sitemap__col prose">
+      <h2>Hlavní stránky</h2>
+      <ul>
+        <li><a href="/">Domů</a></li>
+        <li><a href="/sluzby/">Služby</a></li>
+        <li><a href="/lokality/">Lokality</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/temata/">Témata</a></li>
+        <li><a href="/fotogalerie/">Fotogalerie</a></li>
+        <li><a href="/reference/">Reference</a></li>
+        <li><a href="/faq/">Časté dotazy</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="sitemap__col prose">
+      <h2>Lokality</h2>
+      <ul>
+        {% for l in collections.lokality %}
+        <li><a href="{{ l.url }}">{{ l.data.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="sitemap__col prose">
+      <h2>Blog</h2>
+      <ul>
+        {% for a in collections.clanky %}
+        <li><a href="{{ a.url }}">{{ a.data.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="sitemap__col prose">
+      <h2>Témata</h2>
+      <ul>
+        {% for t in taxonomy %}
+        <li><a href="/temata/{{ t.slug }}/">{{ t.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% for cat in categories %}
+    <div class="sitemap__col prose">
+      <h2>{{ cat.title }}</h2>
+      <ul>
+        {% for s in collections.sluzby %}{% if s.data.category == cat.id %}
+        <li><a href="{{ s.url }}">{{ s.data.navTitle }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

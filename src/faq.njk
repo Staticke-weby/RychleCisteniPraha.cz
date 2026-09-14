@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+title: "Časté dotazy"
+description: "Odpovědi na časté dotazy k čištění vozidel, úklidovým službám, dojezdu, platbě a vybavení – Rychlé čištění Praha."
+permalink: "/faq/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Časté dotazy" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Časté dotazy</p>
+    <h1>Časté dotazy</h1>
+    <p class="page-hero__lead">Nejčastější otázky, které nám zákazníci pokládají. Pokud tu odpověď nenajdete, zavolejte nebo napište – rádi poradíme.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="faq">
+      {% for item in collections.faq %}
+      <details class="faq__item">
+        <summary class="faq__q">{{ item.data.question }}</summary>
+        <div class="faq__a prose">{{ item.templateContent | safe }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in collections.faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.data.question | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ (item.templateContent | striptags | trim) | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{% include "partials/cta.njk" %}

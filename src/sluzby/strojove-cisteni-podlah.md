@@ -1,0 +1,61 @@
+---
+title: "Strojové čištění podlah v průmyslových halách a logistických centrech"
+navTitle: "Strojové čištění podlah"
+category: "prumyslove-cisteni"
+image: "strojove-cisteni-podlah"
+cardImage: "card-prumyslove-cisteni"
+excerpt: "Zametání, strojové mytí, parní čištění, odstranění žvýkaček i renovace dlažeb. Možnost paušálu."
+pricing:
+  title: "Orientační ceny"
+  items:
+    - label: "Zametání"
+      price: "od 10 Kč / m²"
+    - label: "Strojové mytí"
+      price: "od 40 Kč / m²"
+    - label: "Parní čištění"
+      price: "od 120 Kč / m²"
+    - label: "Odstranění žvýkaček"
+      price: "od 50 Kč / m²"
+    - label: "Impregnace dlažby"
+      price: "od 170 Kč / m"
+  text: "Cena od 13 Kč / m² (konkrétní cena dle rozsahu a povrchu)."
+  note: "Minimální cena zakázky: 6 000 Kč."
+cta: "Poptat čištění podlah haly"
+order: 14
+topics:
+  - "prumyslove-cisteni"
+  - "tlakove-cisteni"
+  - "soukromi-a-firmy"
+audience:
+  - "Výrobní a průmyslové podniky"
+  - "Logistická a skladovací centra"
+  - "Obchodní centra"
+  - "Správci velkých areálů"
+process:
+  - title: "Prohlídka haly"
+    text: "Určíme typ podlahy a míru znečištění."
+  - title: "Zametání"
+    text: "Plochu nejprve zameteme a odstraníme hrubé nečistoty."
+  - title: "Strojové mytí"
+    text: "Podlahu umyjeme strojem; dle potřeby parou nebo s impregnací."
+  - title: "Kontrola a předání"
+    text: "Plochu zkontrolujeme a předáme."
+priceFactors:
+  - "Velikost plochy"
+  - "Typ povrchu"
+  - "Míra znečištění"
+  - "Četnost (jednorázově/paušál)"
+equipment: "Používáme průmyslové zametací a mycí stroje, parní čističe a prostředky na beton, lak i dlažbu."
+faq:
+  - q: "Jaká je minimální zakázka?"
+    a: "Minimální cena zakázky je 6 000 Kč. Orientační ceny jsou od 10 Kč/m² za zametání a od 40 Kč/m² za strojové mytí, konkrétní cena vždy závisí na povrchu a rozsahu."
+  - q: "Umíte čistit za provozu?"
+    a: "Ano, harmonogram přizpůsobíme vašemu provozu. Čistíme v etapách tak, aby výroba nebo skladování nebylo omezeno více, než je nutné, a plochu vždy předáme bezpečnou."
+  - q: "Nabízíte pravidelný úklid?"
+    a: "Ano, jednorázově i pravidelně na paušál. Pravidelná údržba udrží halu čistou dlouhodobě a bývá výhodnější než opakované jednorázové čištění."
+  - q: "Odstraníte i žvýkačky?"
+    a: "Ano, odstranění žvýkaček začíná na 50 Kč/m². Kromě nich zvládneme i mastnotu, olejové skvrny a další provozní nečistoty."
+  - q: "Jak dlouho čištění trvá?"
+    a: "Podle velikosti a typu povrchu řádově hodiny až dny. U rozsáhlých hal rozložíme práci do etap, abychom vás omezili co nejméně."
+---
+Specializujeme se na strojové čištění podlah v průmyslových halách, skladech a logistických centrech v Praze a okolí. Čistíme hladké, lakované i betonové povrchy. Nabízíme zametání, mytí strojem, parní čištění, odstranění žvýkaček i renovaci dlažeb. Možnost pravidelného úklidu na paušál.

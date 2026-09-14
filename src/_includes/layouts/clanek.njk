@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+---
+<article class="article">
+  <section class="page-hero page-hero--compact">
+    <div class="container">
+      {% set parentLabel = "Blog" %}{% set parentUrl = "/blog/" %}
+      {% include "partials/breadcrumbs.njk" %}
+      <p class="eyebrow">Článek</p>
+      <h1>{{ title }}</h1>
+      <p class="page-hero__lead">{{ excerpt }}</p>
+      <p class="article__meta">{% icon "clock" %} {{ date | czDate }} &nbsp;•&nbsp; {{ site.owner }}</p>
+      {% if topics %}{% include "partials/topic-chips.njk" %}{% endif %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article__body prose">
+      {{ content | safe }}
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container author-box">
+      <p><strong>{{ site.owner }}</strong> – {{ site.ownerRole }}, {{ site.name }}. Osobně vyčistil přes 2 500 kabin kamionů a stovky osobních vozů a věnuje se čištění vozidel i úklidu firem. <a href="/kontakt/">Napište nám</a>.</p>
+    </div>
+  </section>
+
+  {% if faq %}
+  <section class="section section--muted">
+    <div class="container">
+      <header class="section__head">
+        <h2 class="section__title">Časté dotazy</h2>
+      </header>
+      <div class="faq">
+        {% for item in faq %}
+        <details class="faq__item">
+          <summary class="faq__q">{{ item.q }}</summary>
+          <div class="faq__a prose">{{ item.a }}</div>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="section">
+    <div class="container">
+      <header class="section__head">
+        <h2 class="section__title">Související služby</h2>
+      </header>
+      <div class="cards cards--services">
+        {% for s in collections.sluzby.slice(0, 3) %}
+        {% set card = { url: s.url, image: s.data.image, title: s.data.navTitle, text: s.data.excerpt } %}
+        {% include "partials/service-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ excerpt | dump | safe }},
+  "datePublished": {{ date | isoDate | dump | safe }},
+  "dateModified": {{ date | isoDate | dump | safe }},
+  "image": {{ (site.domain + images[image]) | dump | safe }},
+  "mainEntityOfPage": {{ (site.domain + page.url) | dump | safe }},
+  "author": { "@type": "Person", "name": {{ site.owner | dump | safe }}, "url": {{ (site.domain + "/kontakt/") | dump | safe }} },
+  "publisher": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "logo": { "@type": "ImageObject", "url": {{ (site.domain + images.logo) | dump | safe }} } }
+}
+</script>
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% include "partials/cta.njk" %}

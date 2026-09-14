@@ -1,0 +1,5 @@
+<ul class="chips" aria-label="Témata">
+  {% for t in topics %}
+  <li><a class="chip" href="/temata/{{ t }}/">{{ t | topicLabel }}</a></li>
+  {% endfor %}
+</ul>

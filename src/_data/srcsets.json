@@ -1,0 +1,1216 @@
+{
+  "card-cisteni-interieru": {
+    "w": 536,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-interieru-400.webp"
+      },
+      {
+        "w": 536,
+        "url": "/assets/img/opt/card-cisteni-interieru-536.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-interieru-400.avif"
+      },
+      {
+        "w": 536,
+        "url": "/assets/img/opt/card-cisteni-interieru-536.avif"
+      }
+    ]
+  },
+  "card-cisteni-vozidel": {
+    "w": 532,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-vozidel-400.webp"
+      },
+      {
+        "w": 532,
+        "url": "/assets/img/opt/card-cisteni-vozidel-532.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-vozidel-400.avif"
+      },
+      {
+        "w": 532,
+        "url": "/assets/img/opt/card-cisteni-vozidel-532.avif"
+      }
+    ]
+  },
+  "card-cisteni-zamkove-dlazby": {
+    "w": 534,
+    "h": 560,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-zamkove-dlazby-400.webp"
+      },
+      {
+        "w": 534,
+        "url": "/assets/img/opt/card-cisteni-zamkove-dlazby-534.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-zamkove-dlazby-400.avif"
+      },
+      {
+        "w": 534,
+        "url": "/assets/img/opt/card-cisteni-zamkove-dlazby-534.avif"
+      }
+    ]
+  },
+  "card-cisteni-zimnich-zahrad": {
+    "w": 455,
+    "h": 474,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-zimnich-zahrad-400.webp"
+      },
+      {
+        "w": 455,
+        "url": "/assets/img/opt/card-cisteni-zimnich-zahrad-455.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-cisteni-zimnich-zahrad-400.avif"
+      },
+      {
+        "w": 455,
+        "url": "/assets/img/opt/card-cisteni-zimnich-zahrad-455.avif"
+      }
+    ]
+  },
+  "card-malirske-prace": {
+    "w": 578,
+    "h": 602,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-malirske-prace-400.webp"
+      },
+      {
+        "w": 578,
+        "url": "/assets/img/opt/card-malirske-prace-578.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-malirske-prace-400.avif"
+      },
+      {
+        "w": 578,
+        "url": "/assets/img/opt/card-malirske-prace-578.avif"
+      }
+    ]
+  },
+  "card-prumyslove-cisteni": {
+    "w": 448,
+    "h": 472,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-prumyslove-cisteni-400.webp"
+      },
+      {
+        "w": 448,
+        "url": "/assets/img/opt/card-prumyslove-cisteni-448.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-prumyslove-cisteni-400.avif"
+      },
+      {
+        "w": 448,
+        "url": "/assets/img/opt/card-prumyslove-cisteni-448.avif"
+      }
+    ]
+  },
+  "card-specialni-cisteni": {
+    "w": 540,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-specialni-cisteni-400.webp"
+      },
+      {
+        "w": 540,
+        "url": "/assets/img/opt/card-specialni-cisteni-540.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-specialni-cisteni-400.avif"
+      },
+      {
+        "w": 540,
+        "url": "/assets/img/opt/card-specialni-cisteni-540.avif"
+      }
+    ]
+  },
+  "card-uklidove-sluzby": {
+    "w": 532,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-uklidove-sluzby-400.webp"
+      },
+      {
+        "w": 532,
+        "url": "/assets/img/opt/card-uklidove-sluzby-532.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/card-uklidove-sluzby-400.avif"
+      },
+      {
+        "w": 532,
+        "url": "/assets/img/opt/card-uklidove-sluzby-532.avif"
+      }
+    ]
+  },
+  "cisteni-autobusu": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-autobusu-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-autobusu-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-autobusu-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-autobusu-562.avif"
+      }
+    ]
+  },
+  "cisteni-dodavek-mikrobusu": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-dodavek-mikrobusu-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-dodavek-mikrobusu-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-dodavek-mikrobusu-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-dodavek-mikrobusu-562.avif"
+      }
+    ]
+  },
+  "cisteni-flotil": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-flotil-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-flotil-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-flotil-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-flotil-562.avif"
+      }
+    ]
+  },
+  "cisteni-interieru-osobnich-aut": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-interieru-osobnich-aut-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-interieru-osobnich-aut-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-interieru-osobnich-aut-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-interieru-osobnich-aut-562.avif"
+      }
+    ]
+  },
+  "cisteni-kabin-kamionu": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-kabin-kamionu-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-kabin-kamionu-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-kabin-kamionu-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-kabin-kamionu-562.avif"
+      }
+    ]
+  },
+  "cisteni-kin-divadel": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-kin-divadel-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-kin-divadel-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-kin-divadel-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/cisteni-kin-divadel-562.avif"
+      }
+    ]
+  },
+  "cisteni-plastu-hal": {
+    "w": 487,
+    "h": 472,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-plastu-hal-400.webp"
+      },
+      {
+        "w": 487,
+        "url": "/assets/img/opt/cisteni-plastu-hal-487.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-plastu-hal-400.avif"
+      },
+      {
+        "w": 487,
+        "url": "/assets/img/opt/cisteni-plastu-hal-487.avif"
+      }
+    ]
+  },
+  "cisteni-stavebnich-stroju": {
+    "w": 536,
+    "h": 536,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-stavebnich-stroju-400.webp"
+      },
+      {
+        "w": 536,
+        "url": "/assets/img/opt/cisteni-stavebnich-stroju-536.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-stavebnich-stroju-400.avif"
+      },
+      {
+        "w": 536,
+        "url": "/assets/img/opt/cisteni-stavebnich-stroju-536.avif"
+      }
+    ]
+  },
+  "cisteni-zamkove-dlazby": {
+    "w": 577,
+    "h": 560,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-zamkove-dlazby-400.webp"
+      },
+      {
+        "w": 577,
+        "url": "/assets/img/opt/cisteni-zamkove-dlazby-577.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-zamkove-dlazby-400.avif"
+      },
+      {
+        "w": 577,
+        "url": "/assets/img/opt/cisteni-zamkove-dlazby-577.avif"
+      }
+    ]
+  },
+  "cisteni-zidli-boxu": {
+    "w": 579,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-zidli-boxu-400.webp"
+      },
+      {
+        "w": 579,
+        "url": "/assets/img/opt/cisteni-zidli-boxu-579.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-zidli-boxu-400.avif"
+      },
+      {
+        "w": 579,
+        "url": "/assets/img/opt/cisteni-zidli-boxu-579.avif"
+      }
+    ]
+  },
+  "cisteni-zimnich-zahrad": {
+    "w": 489,
+    "h": 474,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-zimnich-zahrad-400.webp"
+      },
+      {
+        "w": 489,
+        "url": "/assets/img/opt/cisteni-zimnich-zahrad-489.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cisteni-zimnich-zahrad-400.avif"
+      },
+      {
+        "w": 489,
+        "url": "/assets/img/opt/cisteni-zimnich-zahrad-489.avif"
+      }
+    ]
+  },
+  "cta-napiste-nam": {
+    "w": 461,
+    "h": 395,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cta-napiste-nam-400.webp"
+      },
+      {
+        "w": 461,
+        "url": "/assets/img/opt/cta-napiste-nam-461.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/cta-napiste-nam-400.avif"
+      },
+      {
+        "w": 461,
+        "url": "/assets/img/opt/cta-napiste-nam-461.avif"
+      }
+    ]
+  },
+  "gallery-01": {
+    "w": 562,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-01-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-01-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-01-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-01-562.avif"
+      }
+    ]
+  },
+  "gallery-02": {
+    "w": 562,
+    "h": 313,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-02-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-02-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-02-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-02-562.avif"
+      }
+    ]
+  },
+  "gallery-03": {
+    "w": 562,
+    "h": 299,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-03-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-03-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-03-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-03-562.avif"
+      }
+    ]
+  },
+  "gallery-04": {
+    "w": 562,
+    "h": 574,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-04-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-04-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-04-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-04-562.avif"
+      }
+    ]
+  },
+  "gallery-05": {
+    "w": 402,
+    "h": 402,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-05-400.webp"
+      },
+      {
+        "w": 402,
+        "url": "/assets/img/opt/gallery-05-402.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-05-400.avif"
+      },
+      {
+        "w": 402,
+        "url": "/assets/img/opt/gallery-05-402.avif"
+      }
+    ]
+  },
+  "gallery-06": {
+    "w": 562,
+    "h": 313,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-06-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-06-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-06-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-06-562.avif"
+      }
+    ]
+  },
+  "gallery-07": {
+    "w": 1280,
+    "h": 1280,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-07-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-07-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-07-1200.webp"
+      },
+      {
+        "w": 1280,
+        "url": "/assets/img/opt/gallery-07-1280.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-07-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-07-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-07-1200.avif"
+      },
+      {
+        "w": 1280,
+        "url": "/assets/img/opt/gallery-07-1280.avif"
+      }
+    ]
+  },
+  "gallery-08": {
+    "w": 562,
+    "h": 313,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-08-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-08-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-08-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-08-562.avif"
+      }
+    ]
+  },
+  "gallery-09": {
+    "w": 562,
+    "h": 299,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-09-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-09-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-09-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-09-562.avif"
+      }
+    ]
+  },
+  "gallery-10": {
+    "w": 562,
+    "h": 574,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-10-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-10-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-10-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-10-562.avif"
+      }
+    ]
+  },
+  "gallery-11": {
+    "w": 1200,
+    "h": 1200,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-11-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-11-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-11-1200.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-11-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-11-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-11-1200.avif"
+      }
+    ]
+  },
+  "gallery-12": {
+    "w": 562,
+    "h": 313,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-12-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-12-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-12-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/gallery-12-562.avif"
+      }
+    ]
+  },
+  "gallery-13": {
+    "w": 1200,
+    "h": 1200,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-13-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-13-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-13-1200.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-13-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-13-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-13-1200.avif"
+      }
+    ]
+  },
+  "gallery-14": {
+    "w": 1200,
+    "h": 638,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-14-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-14-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-14-1200.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-14-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-14-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-14-1200.avif"
+      }
+    ]
+  },
+  "gallery-15": {
+    "w": 1200,
+    "h": 667,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-15-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-15-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-15-1200.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-15-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-15-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-15-1200.avif"
+      }
+    ]
+  },
+  "gallery-16": {
+    "w": 1200,
+    "h": 1226,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-16-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-16-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-16-1200.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-16-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-16-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-16-1200.avif"
+      }
+    ]
+  },
+  "gallery-17": {
+    "w": 1200,
+    "h": 1200,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-17-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-17-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-17-1200.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-17-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-17-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-17-1200.avif"
+      }
+    ]
+  },
+  "gallery-18": {
+    "w": 1200,
+    "h": 667,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-18-400.webp"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-18-800.webp"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-18-1200.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/gallery-18-400.avif"
+      },
+      {
+        "w": 800,
+        "url": "/assets/img/opt/gallery-18-800.avif"
+      },
+      {
+        "w": 1200,
+        "url": "/assets/img/opt/gallery-18-1200.avif"
+      }
+    ]
+  },
+  "hero": {
+    "w": 400,
+    "h": 395,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/hero-400.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/hero-400.avif"
+      }
+    ]
+  },
+  "kontakt": {
+    "w": 510,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/kontakt-400.webp"
+      },
+      {
+        "w": 510,
+        "url": "/assets/img/opt/kontakt-510.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/kontakt-400.avif"
+      },
+      {
+        "w": 510,
+        "url": "/assets/img/opt/kontakt-510.avif"
+      }
+    ]
+  },
+  "logo": {
+    "w": 282,
+    "h": 75,
+    "webp": [
+      {
+        "w": 282,
+        "url": "/assets/img/opt/logo-282.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 282,
+        "url": "/assets/img/opt/logo-282.avif"
+      }
+    ]
+  },
+  "malirske-prace": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/malirske-prace-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/malirske-prace-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/malirske-prace-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/malirske-prace-562.avif"
+      }
+    ]
+  },
+  "og-image": {
+    "w": 1200,
+    "h": 630,
+    "webp": [],
+    "avif": []
+  },
+  "strojove-cisteni-dlazeb-komunikaci": {
+    "w": 586,
+    "h": 568,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/strojove-cisteni-dlazeb-komunikaci-400.webp"
+      },
+      {
+        "w": 586,
+        "url": "/assets/img/opt/strojove-cisteni-dlazeb-komunikaci-586.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/strojove-cisteni-dlazeb-komunikaci-400.avif"
+      },
+      {
+        "w": 586,
+        "url": "/assets/img/opt/strojove-cisteni-dlazeb-komunikaci-586.avif"
+      }
+    ]
+  },
+  "strojove-cisteni-podlah": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/strojove-cisteni-podlah-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/strojove-cisteni-podlah-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/strojove-cisteni-podlah-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/strojove-cisteni-podlah-562.avif"
+      }
+    ]
+  },
+  "tepovani-kobercu-sedacek": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/tepovani-kobercu-sedacek-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/tepovani-kobercu-sedacek-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/tepovani-kobercu-sedacek-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/tepovani-kobercu-sedacek-562.avif"
+      }
+    ]
+  },
+  "tym-radek-ingr": {
+    "w": 538,
+    "h": 562,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/tym-radek-ingr-400.webp"
+      },
+      {
+        "w": 538,
+        "url": "/assets/img/opt/tym-radek-ingr-538.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/tym-radek-ingr-400.avif"
+      },
+      {
+        "w": 538,
+        "url": "/assets/img/opt/tym-radek-ingr-538.avif"
+      }
+    ]
+  },
+  "uklid-kancelari": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/uklid-kancelari-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/uklid-kancelari-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/uklid-kancelari-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/uklid-kancelari-562.avif"
+      }
+    ]
+  },
+  "uklid-spolecnych-prostor-svj": {
+    "w": 562,
+    "h": 545,
+    "webp": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/uklid-spolecnych-prostor-svj-400.webp"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/uklid-spolecnych-prostor-svj-562.webp"
+      }
+    ],
+    "avif": [
+      {
+        "w": 400,
+        "url": "/assets/img/opt/uklid-spolecnych-prostor-svj-400.avif"
+      },
+      {
+        "w": 562,
+        "url": "/assets/img/opt/uklid-spolecnych-prostor-svj-562.avif"
+      }
+    ]
+  }
+}

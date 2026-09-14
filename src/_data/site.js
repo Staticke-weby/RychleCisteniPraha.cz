@@ -1,0 +1,32 @@
+export default {
+  name: "Rychlé čištění Praha",
+  legalName: "TRIVESTIA s.r.o.",
+  tagline: "Profesionální čištění vozidel a úklidové služby v Praze",
+  description:
+    "Profesionální mobilní čištění vozidel, úklidové služby, čištění interiérů a průmyslové čištění v Praze a okolí. Přijedeme až k vám.",
+  domain: "https://www.rychlecistenipraha.cz",
+  phone: "+420 777 480 443",
+  phoneHref: "+420777480443",
+  whatsapp: "420777480443",
+  email: "info@rychlecistenipraha.cz",
+  owner: "Radek Ingr",
+  ownerRole: "Ředitel společnosti",
+  hours: "Po–Ne: 7:00–21:00",
+  area: "Celá Praha a okolí (dojezd kamkoliv)",
+  address: {
+    company: "TRIVESTIA s.r.o.",
+    street: "Táboritská 880/14",
+    city: "130 00 Praha 3 – Žižkov",
+    ico: "24032549",
+  },
+  social: {
+    facebook: "https://www.facebook.com/rychle.cisteni.praha/",
+    instagram: "https://www.instagram.com/rychlecisteni_praha/",
+  },
+  stats: [
+    { value: "6 let", label: "zkušeností na trhu" },
+    { value: "3 000+", label: "vyčištěných vozidel" },
+    { value: "7–21", label: "každý den včetně víkendů" },
+    { value: "100 km", label: "dojezd zdarma při 2+ vozech" },
+  ],
+};

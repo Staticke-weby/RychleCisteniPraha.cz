@@ -1,0 +1,31 @@
+<header class="site-header" data-header>
+  <div class="container header__inner">
+    <a class="brand" href="/" aria-label="{{ site.name }} – domů">
+      <img class="brand__logo" src="{{ images.logo }}" width="282" height="75" alt="{{ site.name }}" fetchpriority="high">
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="visually-hidden">Otevřít menu</span>
+    </button>
+
+    <nav class="site-nav" id="primary-nav" aria-label="Hlavní navigace" data-nav>
+      <ul class="site-nav__list">
+        <li><a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Domů</a></li>
+        <li><a href="/sluzby/"{% if page.url.startsWith("/sluzby") %} aria-current="page"{% endif %}>Služby</a></li>
+        <li><a href="/lokality/"{% if page.url.startsWith("/lokality") %} aria-current="page"{% endif %}>Lokality</a></li>
+        <li><a href="/blog/"{% if page.url.startsWith("/blog") %} aria-current="page"{% endif %}>Blog</a></li>
+        <li><a href="/fotogalerie/"{% if page.url.startsWith("/fotogalerie") %} aria-current="page"{% endif %}>Fotogalerie</a></li>
+        <li><a href="/kontakt/"{% if page.url.startsWith("/kontakt") %} aria-current="page"{% endif %}>Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn--primary btn--sm" href="tel:{{ site.phoneHref }}">
+          {% icon "phone" %}<span>{{ site.phone }}</span>
+        </a>
+        <a class="btn btn--outline btn--sm" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" aria-label="Napsat na WhatsApp">
+          {% icon "whatsapp" %}<span>WhatsApp</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>

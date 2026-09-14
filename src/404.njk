@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: "Stránka nenalezena (404)"
+robots: "noindex, follow"
+description: "Požadovaná stránka nebyla nalezena."
+permalink: "/404.html"
+eleventyExcludeFromCollections: true
+---
+<section class="page-hero page-hero--compact error-page">
+  <div class="container">
+    <p class="eyebrow">Chyba 404</p>
+    <h1>Stránka nenalezena</h1>
+    <p class="page-hero__lead">Omlouváme se, ale stránka, kterou hledáte, neexistuje nebo byla přesunuta. Zkuste se vrátit na úvod nebo se podívat na nabídku služeb.</p>
+    <div class="page-hero__actions">
+      <a class="btn btn--primary" href="/">Zpět na úvod {% icon "arrow" %}</a>
+      <a class="btn btn--outline" href="/sluzby/">Přehled služeb</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section__title">Nejčastěji hledané služby</h2>
+    <div class="cards cards--services">
+      {% for service in collections.sluzby.slice(0, 3) %}
+      <article class="card card--service">
+        <a class="card__link" href="{{ service.url }}">
+          <div class="card__media">
+            {% picture service.data.image, service.data.navTitle, "", "(max-width: 620px) 100vw, 33vw", "lazy" %}
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">{{ service.data.navTitle }}</h3>
+            <p class="card__text">{{ service.data.excerpt }}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

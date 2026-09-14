@@ -1,0 +1,12 @@
+<nav class="breadcrumbs" aria-label="Drobečková navigace">
+  <ol>
+    <li><a href="/">Domů</a></li>
+    {% if category %}
+    <li><a href="/sluzby/">Služby</a></li>
+    <li><a href="/sluzby/#{{ category.id }}">{{ category.title }}</a></li>
+    {% elif parentLabel %}
+    <li><a href="{{ parentUrl }}">{{ parentLabel }}</a></li>
+    {% endif %}
+    <li aria-current="page">{{ title }}</li>
+  </ol>
+</nav>

@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: "Lokality"
+description: "Mobilní čištění a úklid v Praze a okolí – přehled lokalit, kam dojíždíme. Praha 1–10, Praha-východ, Praha-západ i další města."
+permalink: "/lokality/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Lokality" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Kde působíme</p>
+    <h1>Mobilní čištění a úklid v Praze a okolí</h1>
+    <p class="page-hero__lead">Přijedeme až k vám. Do 100 km od Prahy je doprava zdarma při objednávce 2 a více vozů. Vyberte svou lokalitu.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cards cards--services">
+      {% for l in collections.lokality %}
+      <article class="card card--service">
+        <a class="card__link" href="{{ l.url }}">
+          <div class="card__media">{% picture "card-cisteni-vozidel", l.data.title, "", "100vw", "lazy" %}</div>
+          <div class="card__body">
+            <h3 class="card__title">{{ l.data.title }}</h3>
+            <p class="card__text">{{ l.data.region }}</p>
+            <span class="card__more">Zobrazit lokalitu {% icon "arrow" %}</span>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

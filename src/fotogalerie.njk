@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: "Fotogalerie"
+description: "Fotogalerie realizací Rychlé čištění Praha – čištění vozidel, interiérů, dlažeb i průmyslových prostor."
+permalink: "/fotogalerie/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Fotogalerie" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Ukázky naší práce</p>
+    <h1>Fotogalerie</h1>
+    <p class="page-hero__lead">Podívejte se na výsledky naší práce – od osobních aut a kamionů přes koberce a sedačky až po zámkovou dlažbu a výrobní haly.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery">
+      {% for key in images.gallery %}
+      <a class="gallery__item" href="{{ images[key] }}" data-lightbox-item data-caption="{{ gallery[key] }}" aria-label="Zvětšit fotografii: {{ gallery[key] }}">
+        {% picture key, gallery[key], "", "(max-width: 620px) 50vw, 25vw", "lazy" %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container follow">
+    <h2 class="section__title section__title--center">Sledujte realizace čištění na sociálních sítích</h2>
+    <div class="follow__actions">
+      <a class="btn btn--outline" href="{{ site.social.facebook }}" target="_blank" rel="noopener">{% icon "facebook" %}<span>Facebook</span></a>
+      <a class="btn btn--outline" href="{{ site.social.instagram }}" target="_blank" rel="noopener">{% icon "instagram" %}<span>Instagram</span></a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

@@ -1,0 +1,178 @@
+---
+layout: layouts/base.njk
+title: "Čištění vozidel a úklidové služby v Praze"
+description: "Profesionální mobilní čištění vozidel, úklidové služby, čištění interiérů a průmyslové čištění v Praze a okolí. Přijedeme až k vám."
+ogImage: "card-cisteni-vozidel"
+preload: "gallery-18"
+---
+<section class="hero hero--home">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow">{{ home.hero.eyebrow }}</p>
+      <h1 class="hero__title">{{ home.hero.title }}</h1>
+      <p class="hero__subtitle">{{ home.hero.subtitle }}</p>
+      <p class="hero__text">{{ home.hero.text }}</p>
+      <p class="hero__text hero__text--strong">{{ home.hero.text2 }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="/kontakt/">{{ home.hero.cta }} {% icon "arrow" %}</a>
+        <a class="btn btn--outline btn--lg" href="tel:{{ site.phoneHref }}">{% icon "phone" %}<span>{{ site.phone }}</span></a>
+      </div>
+    </div>
+  </div>
+  <ul class="hero__stats container">
+    {% for stat in site.stats %}
+    <li><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <div class="container grid grid--2">
+    <div class="prose">
+      <h2>{{ home.intro.title }}</h2>
+      <p>{{ home.intro.text }}</p>
+    </div>
+    <div class="prose">
+      <h2>{{ home.intro.title2 }}</h2>
+      <p>{{ home.intro.text2 }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted" id="sluzby">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Naše služby</p>
+      <h2 class="section__title">Co pro vás umíme zajistit</h2>
+      <p class="section__lead">Od osobních aut po kamiony, od sedaček po výrobní haly. Vyberte si službu, kterou potřebujete.</p>
+    </header>
+    <div class="cards">
+      {% for card in home.cards %}
+      {% include "partials/service-card.njk" %}
+      {% endfor %}
+    </div>
+    <div class="section__actions">
+      <a class="btn btn--outline" href="/sluzby/">Všechny služby {% icon "arrow" %}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about">
+    <div class="about__media">
+      {% picture home.about.image, site.owner + ", " + site.name, "", "(max-width: 1024px) 100vw, 42vw", "lazy" %}
+    </div>
+    <div class="about__content prose">
+      <h2>{{ home.about.title }}</h2>
+      <p>{{ home.about.text }}</p>
+      <p class="about__chem">{{ home.about.chem }}</p>
+      <p class="about__signature">{{ site.owner }}<span>{{ site.ownerRole }}</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <h2 class="section__title">{{ home.whyUs.title }}</h2>
+    </header>
+    <ul class="features">
+      {% for item in home.whyUs.items %}
+      <li class="feature">
+        <span class="feature__icon">{% icon "check" %}</span>
+        <div>
+          <h3 class="feature__title">{{ item.title }}</h3>
+          <p class="feature__text">{{ item.text }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <h2 class="section__title">{{ home.testimonials.title }}</h2>
+    </header>
+    <div class="testimonials">
+      {% for item in collections.reference %}
+      <blockquote class="testimonial">
+        <span class="testimonial__stars" aria-hidden="true">{% icon "star" %}{% icon "star" %}{% icon "star" %}{% icon "star" %}{% icon "star" %}</span>
+        <p>{{ item.templateContent | striptags | trim }}</p>
+        <footer>— {{ item.data.author }}</footer>
+      </blockquote>
+      {% endfor %}
+    </div>
+    <div class="section__actions">
+      <a class="btn btn--outline" href="/reference/">Všechny reference {% icon "arrow" %}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section clients">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <h2 class="section__title">{{ home.clients.title }}</h2>
+    </header>
+    <ul class="clients__list">
+      {% for client in home.clients.list %}
+      <li>{{ client }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <h2 class="section__title">{{ home.process.title }}</h2>
+    </header>
+    <ol class="steps">
+      {% for step in home.process.steps %}
+      <li class="step">
+        <span class="step__num">{{ loop.index }}</span>
+        <h3 class="step__title">{{ step.title }}</h3>
+        <p class="step__text">{{ step.text }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section__head">
+      <h2 class="section__title">{{ home.infos.title }}</h2>
+    </header>
+    <div class="infos">
+      {% for info in home.infos.items %}
+      <div class="info">
+        <h3 class="info__title">{% icon "check" %}{{ info.title }}</h3>
+        <p>{{ info.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <header class="section__head section__head--center">
+      <h2 class="section__title">Podívejte se na výsledky naší práce</h2>
+      <p class="section__lead">Fotografie z realizací čištění vozidel, interiérů i průmyslových prostor.</p>
+    </header>
+    <div class="gallery gallery--preview">
+      {% for key in images.gallery.slice(0, 8) %}
+      <a class="gallery__item" href="{{ images[key] }}" data-lightbox-item data-caption="{{ gallery[key] }}" aria-label="Zvětšit fotografii: {{ gallery[key] }}">
+        {% picture key, gallery[key], "", "(max-width: 620px) 50vw, 25vw", "lazy" %}
+      </a>
+      {% endfor %}
+    </div>
+    <div class="section__actions">
+      <a class="btn btn--outline" href="/fotogalerie/">Celá fotogalerie {% icon "arrow" %}</a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

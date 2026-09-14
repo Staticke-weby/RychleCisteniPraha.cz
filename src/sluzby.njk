@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+title: "Služby"
+description: "Přehled služeb Rychlé čištění Praha – čištění vozidel, úklidové služby, čištění interiérů, speciální a průmyslové čištění i malířské práce."
+permalink: "/sluzby/index.html"
+---
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    {% set category = false %}
+    {% set title = "Služby" %}
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Přehled služeb</p>
+    <h1>Služby Rychlé čištění Praha</h1>
+    <p class="page-hero__lead">Kompletní čištění vozidel, úklidové služby, čištění interiérů, speciální a průmyslové čištění i malířské práce. Vše jako mobilní služba s dojezdem až k vám.</p>
+  </div>
+</section>
+
+<nav class="anchor-nav" aria-label="Kategorie služeb">
+  <div class="container anchor-nav__inner">
+    {% for category in categories %}
+    <a href="#{{ category.id }}">{{ category.title }}</a>
+    {% endfor %}
+  </div>
+</nav>
+
+{% for category in categories %}
+<section class="section{% if loop.index is even %} section--muted{% endif %}" id="{{ category.id }}">
+  <div class="container">
+    <header class="section__head">
+      <h2 class="section__title">{{ category.title }}</h2>
+      <p class="section__lead">{{ category.description }}</p>
+    </header>
+    <div class="cards cards--services">
+      {% for service in collections.sluzby %}
+      {% if service.data.category == category.id %}
+      <article class="card card--service">
+        <a class="card__link" href="{{ service.url }}">
+          <div class="card__media">
+            {% picture service.data.image, service.data.navTitle, "", "(max-width: 620px) 100vw, (max-width: 1024px) 50vw, 33vw", "lazy" %}
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">{{ service.data.navTitle }}</h3>
+            <p class="card__text">{{ service.data.excerpt }}</p>
+            <span class="card__more">Zobrazit detail {% icon "arrow" %}</span>
+          </div>
+        </a>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+{% include "partials/cta.njk" %}
