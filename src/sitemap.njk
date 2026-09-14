@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
 {%- endif %}
 {%- endif %}
 {%- endfor %}
-{%- for tag in taxonomy %}
+{%- for tag in taxonomy.items %}
   <url>
     <loc>{{ site.domain }}/temata/{{ tag.slug }}/</loc>
     <lastmod>{{ "" | isoNow }}</lastmod>

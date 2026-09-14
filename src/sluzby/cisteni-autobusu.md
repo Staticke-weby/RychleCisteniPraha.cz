@@ -2,8 +2,8 @@
 title: "Čištění autobusů – pro dopravce i soukromníky"
 navTitle: "Autobusy"
 category: "cisteni-vozidel"
-image: "cisteni-autobusu"
-cardImage: "card-cisteni-vozidel"
+image: "/assets/img/cisteni-autobusu.jpg"
+cardImage: "/assets/img/card-cisteni-vozidel.jpg"
 excerpt: "Zajistěte cestujícím čisté a voňavé prostředí. Tepování sedadel, podlah i prostoru řidiče."
 listTitle: "Seznam úkonů"
 list:

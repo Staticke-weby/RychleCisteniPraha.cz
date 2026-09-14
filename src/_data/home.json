@@ -1,0 +1,194 @@
+{
+  "hero": {
+    "eyebrow": "Mobilní čištění v Praze a okolí",
+    "title": "Rychlé čištění Praha",
+    "subtitle": "Profesionální čištění vozidel a úklidové služby v Praze",
+    "text": "Čištění vozidel, úklid prostor i průmyslové čištění – rychle a profesionálně. Zajišťujeme kompletní čištění a mytí osobních aut, limuzín, dodávek, euro cargo, nákladních vozů, tahačů, kamionů, mikrobusů a autobusů. Specializujeme se také na čištění stavebních strojů, úklid kanceláří, čištění koberců a sedaček, čištění zimních zahrad, zámkových dlažeb, úklidové služby pro SVJ a bytové domy, stejně jako profesionální mytí plášťů výrobních hal a čištění dlažeb a komunikací v logistických centrech.",
+    "text2": "To vše nabízíme jako mobilní čištění v Praze – přijedeme až k vám! S námi získáte čistotu, která je nejen vidět, ale i cítit.",
+    "image": "/assets/img/hero.png",
+    "cardImage": "/assets/img/cisteni-interieru-osobnich-aut.jpg",
+    "cta": "Poptat čištění nebo úklid"
+  },
+  "intro": {
+    "title": "Mobilní čištění na míru – vaše vozidla i prostory v těch nejlepších rukou",
+    "text": "Od osobních aut po kamiony, od sedaček po haly – jsme specialisté na cílené a šetrné čištění všeho, co potřebujete. Pracujeme rychle, efektivně a spolehlivě – ať jde o každodenní úklid, generální mytí vozidla nebo detailní péči o firemní prostory. Díky našim mobilním jednotkám pro čištění a úklid jsme tam, kde nás zrovna potřebujete – a výsledek je vždy perfektní.",
+    "title2": "Čistota bez starostí – pro firmy, SVJ i jednotlivce",
+    "text2": "Ať spravujete bytový dům, provozujete dopravní firmu, nebo jen chcete mít své auto jako nové, jsme tady pro vás. Naše služby zahrnují mytí všech typů vozidel, důkladný úklid kanceláří, sedacích souprav a koberců, čištění zimních zahrad stejně jako náročné průmyslové čištění a údržbu hal. Nečekáte ve frontách – přijedeme k vám. Čistíme s úctou k vašemu času i prostoru."
+  },
+  "cards": [
+    {
+      "title": "Čištění vozidel",
+      "text": "Osobní auta, SUV, dodávky, nákladní vozy, kamiony, mikrobusy, autobusy, taxi, firemní flotily.",
+      "image": "/assets/img/card-cisteni-vozidel.jpg",
+      "url": "/sluzby/#cisteni-vozidel"
+    },
+    {
+      "title": "Úklidové služby",
+      "text": "Kanceláře, firmy, SVJ, bytové domy.",
+      "image": "/assets/img/card-uklidove-sluzby.jpg",
+      "url": "/sluzby/#uklidove-sluzby"
+    },
+    {
+      "title": "Čištění interiérů",
+      "text": "Koberce, sedačky, čalounění, restaurace, kina a divadla (doma i ve firmě).",
+      "image": "/assets/img/card-cisteni-interieru.jpg",
+      "url": "/sluzby/#cisteni-interieru"
+    },
+    {
+      "title": "Speciální čištění",
+      "text": "Stavební stroje, traktory.",
+      "image": "/assets/img/card-specialni-cisteni.jpg",
+      "url": "/sluzby/#specialni-cisteni"
+    },
+    {
+      "title": "Čištění zámkové dlažby",
+      "text": "Odstranění nečistot, skvrn i organických usazenin, likvidace plevele a mechů mezi spárami zámkové dlažby.",
+      "image": "/assets/img/card-cisteni-zamkove-dlazby.jpg",
+      "url": "/sluzby/cisteni-zamkove-dlazby/"
+    },
+    {
+      "title": "Čištění zimních zahrad",
+      "text": "Důkladné ruční čištění všech skleněných a rámových ploch zimních zahrad (doma i ve firmě).",
+      "image": "/assets/img/card-cisteni-zimnich-zahrad.jpg",
+      "url": "/sluzby/cisteni-zimnich-zahrad/"
+    },
+    {
+      "title": "Průmyslové čištění",
+      "text": "Mytí plášťů výrobních hal, čištění dlažeb a komunikací v logistických centrech, strojové čištění podlah.",
+      "image": "/assets/img/card-prumyslove-cisteni.jpg",
+      "url": "/sluzby/#prumyslove-cisteni"
+    },
+    {
+      "title": "Malířské práce",
+      "text": "Malířské práce v developerských projektech, školách, kancelářích, logistických centrech.",
+      "image": "/assets/img/card-malirske-prace.jpg",
+      "url": "/sluzby/malirske-prace/"
+    }
+  ],
+  "about": {
+    "title": "Kdo se postará o vaši čistotu?",
+    "text": "Jmenuji se Radek Ingr a čištění se věnuji naplno. Začínali jsme před 5 lety jako malá firma na čištění interiérů aut. Díky tvrdé práci a spokojeným zákazníkům jsme vyrostli a dnes nabízíme širokou škálu služeb. Za svou kariéru jsem osobně vyčistil přes 2500 kamionů a více než 500 osobních vozidel. Pořádek a čistota jsou pro mě vášní od dětství.",
+    "chem": "Vybavení a chemie: Používáme pouze profesionální vybavení Kärcher a špičkovou chemii od ověřených značek jako Würth, Sonax, Mafra, Riwax, Katrin a Spontax.",
+    "image": "/assets/img/tym-radek-ingr.jpg"
+  },
+  "whyUs": {
+    "title": "Proč svěřit čistotu právě nám?",
+    "items": [
+      {
+        "title": "6 let zkušeností",
+        "text": "Jsme na trhu již 6 let."
+      },
+      {
+        "title": "Tisíce vyčištěných vozidel",
+        "text": "Máme za sebou více než 3 000 vyčištěných vozidel."
+      },
+      {
+        "title": "Maximální flexibilita",
+        "text": "Pracujeme i o víkendech a svátcích, od 7:00 do 21:00."
+      },
+      {
+        "title": "Přijedeme za vámi",
+        "text": "Mobilní čištění u zákazníka je náš standard. Dojezd do 100 km od Prahy zdarma (při objednávce 2+ vozů)."
+      },
+      {
+        "title": "100% kvalita",
+        "text": "Ověřeno stovkami spokojených zákazníků a recenzí."
+      },
+      {
+        "title": "Profesionální vybavení",
+        "text": "Používáme profi stroje a certifikované čisticí prostředky."
+      },
+      {
+        "title": "Férové ceny",
+        "text": "Přehledná cenotvorba."
+      },
+      {
+        "title": "Široký záběr služeb",
+        "text": "Od aut po haly, od tepování po malování."
+      }
+    ]
+  },
+  "clients": {
+    "title": "S kým spolupracujeme",
+    "list": [
+      "Dorys",
+      "Exicom",
+      "Autodoprava Chaloupecký",
+      "CS Cargo",
+      "Student Agency",
+      "Kohlman & Hašek",
+      "Arriva a.s.",
+      "Svedík s.r.o.",
+      "Autodoprava Pochobrandský",
+      "l+k spol. s r.o.",
+      "car transport company s.r.o.",
+      "Kozler s.r.o.",
+      "Hopi s.r.o.",
+      "Mirtrans",
+      "Q cargo s.r.o.",
+      "Nisparo s.r.o.",
+      "Jarmes s.r.o.",
+      "Řehák zasilatelství",
+      "Scania Czech Republic",
+      "Vega Tour",
+      "Metrostav",
+      "Vodarek transport a.s.",
+      "Quehenberger logistics GmbH Rakousko",
+      "Hyncica transport"
+    ]
+  },
+  "testimonials": {
+    "title": "Spokojení zákazníci jsou naší nejlepší reklamou"
+  },
+  "process": {
+    "title": "Jak probíhá čištění nebo úklid?",
+    "steps": [
+      {
+        "title": "Poptávka",
+        "text": "Kontaktujte nás telefonicky, e-mailem nebo přes WhatsApp."
+      },
+      {
+        "title": "Nabídka a termín",
+        "text": "Připravíme individuální nabídku a potvrdíme termín."
+      },
+      {
+        "title": "Příjezd",
+        "text": "Náš technik přijede na domluvené místo (Praha a okolí do 100 km zdarma při více vozech)."
+      },
+      {
+        "title": "Realizace",
+        "text": "Provedeme profesionální čištění nebo úklid. Pořídíme fotky před a po."
+      },
+      {
+        "title": "Platba",
+        "text": "Platba hotově nebo fakturou (pro stálé klienty)."
+      }
+    ]
+  },
+  "infos": {
+    "title": "Důležité informace",
+    "items": [
+      {
+        "title": "Doprava",
+        "text": "Do 100 km od Prahy zdarma při objednávce 2 a více vozidel nebo dle individuální domluvy. Nad 100 km účtujeme 7 Kč/km."
+      },
+      {
+        "title": "Likvidace chemie",
+        "text": "Určení správného místa pro likvidaci použité chemie v místě čištění je zodpovědností zákazníka."
+      },
+      {
+        "title": "Reklamace",
+        "text": "Přijímáme při předání zakázky."
+      },
+      {
+        "title": "Dárkové vouchery",
+        "text": "Nabízíme dárkové poukazy – ideální dárek pro blízké nebo partnery."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Napište nám nebo zavolejte – jsme tu pro vás!",
+    "text": "S námi získáte čistotu, která je vidět, cítit i poznat na první pohled.",
+    "image": "/assets/img/cta-napiste-nam.png"
+  }
+}

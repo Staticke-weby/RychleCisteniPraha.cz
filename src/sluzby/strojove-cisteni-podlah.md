@@ -2,8 +2,8 @@
 title: "Strojové čištění podlah v průmyslových halách a logistických centrech"
 navTitle: "Strojové čištění podlah"
 category: "prumyslove-cisteni"
-image: "strojove-cisteni-podlah"
-cardImage: "card-prumyslove-cisteni"
+image: "/assets/img/strojove-cisteni-podlah.jpg"
+cardImage: "/assets/img/card-prumyslove-cisteni.jpg"
 excerpt: "Zametání, strojové mytí, parní čištění, odstranění žvýkaček i renovace dlažeb. Možnost paušálu."
 pricing:
   title: "Orientační ceny"

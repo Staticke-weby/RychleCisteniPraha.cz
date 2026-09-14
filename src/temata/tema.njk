@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 pagination:
-  data: taxonomy
+  data: taxonomy.items
   size: 1
   alias: tema
 permalink: "/temata/{{ tema.slug }}/index.html"
@@ -74,8 +74,8 @@ permalink: "/temata/{{ tema.slug }}/index.html"
     <div class="faq">
       {% for item in tema.faq %}
       <details class="faq__item">
-        <summary class="faq__q">{{ item[0] }}</summary>
-        <div class="faq__a prose">{{ item[1] }}</div>
+        <summary class="faq__q">{{ item.q }}</summary>
+        <div class="faq__a prose">{{ item.a }}</div>
       </details>
       {% endfor %}
     </div>
@@ -91,8 +91,8 @@ permalink: "/temata/{{ tema.slug }}/index.html"
     {% for item in tema.faq %}
     {
       "@type": "Question",
-      "name": {{ item[0] | dump | safe }},
-      "acceptedAnswer": { "@type": "Answer", "text": {{ item[1] | dump | safe }} }
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]

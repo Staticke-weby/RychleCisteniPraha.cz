@@ -2,8 +2,8 @@
 title: "Hloubkové tepování koberců a sedaček"
 navTitle: "Koberce a sedačky"
 category: "cisteni-interieru"
-image: "tepovani-kobercu-sedacek"
-cardImage: "card-cisteni-interieru"
+image: "/assets/img/tepovani-kobercu-sedacek.jpg"
+cardImage: "/assets/img/card-cisteni-interieru.jpg"
 excerpt: "Zbavte se skvrn, roztočů a zápachu. Profesionální tepování přímo u vás doma nebo ve firmě."
 groups:
   - title: "Čištění sedaček"

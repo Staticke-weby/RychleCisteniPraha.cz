@@ -2,8 +2,8 @@
 title: "Čištění stavebních strojů, traktorů a zemědělské techniky"
 navTitle: "Stavební stroje a traktory"
 category: "specialni-cisteni"
-image: "cisteni-stavebnich-stroju"
-cardImage: "card-specialni-cisteni"
+image: "/assets/img/cisteni-stavebnich-stroju.jpg"
+cardImage: "/assets/img/card-specialni-cisteni.jpg"
 excerpt: "Kabiny bagrů, traktorů, kombajnů i vysokozdvižných vozíků. Přijedeme i na stavbu, možnost renovace laku."
 listTitle: "Seznam úkonů"
 list:

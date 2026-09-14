@@ -1,0 +1,370 @@
+backend:
+  name: github
+  repo: Staticke-weby/RychleCisteniPraha.cz
+  branch: master
+  # Etapa 2 (OAuth pro klienta): odkomentuj a doplň URL workeru sveltia-cms-auth
+  # base_url: https://<nazev>.workers.dev
+  auth_methods: [token]
+
+media_folder: "src/assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: sluzby
+    label: "Služby"
+    label_singular: "Služba"
+    folder: "src/sluzby"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: [order, title]
+    fields:
+      - { name: title, label: "Titulek (H1)", widget: string }
+      - { name: navTitle, label: "Krátký název (karty/menu)", widget: string, required: false }
+      - name: category
+        label: "Kategorie"
+        widget: select
+        options:
+          - { value: cisteni-vozidel, label: "Čištění vozidel" }
+          - { value: uklidove-sluzby, label: "Úklidové služby" }
+          - { value: cisteni-interieru, label: "Čištění interiérů" }
+          - { value: specialni-cisteni, label: "Speciální čištění" }
+          - { value: prumyslove-cisteni, label: "Průmyslové čištění" }
+          - { value: doplnkove-sluzby, label: "Malířské práce" }
+      - { name: image, label: "Hlavní obrázek", widget: image }
+      - { name: cardImage, label: "Obrázek karty", widget: image, required: false }
+      - { name: excerpt, label: "Krátký popis (výpis, meta)", widget: text }
+      - { name: cta, label: "Text tlačítka", widget: string }
+      - { name: order, label: "Pořadí", widget: number, value_type: int }
+      - { name: listTitle, label: "Nadpis seznamu úkonů", widget: string, required: false }
+      - { name: list, label: "Seznam úkonů", widget: list, required: false }
+      - { name: benefitsTitle, label: "Nadpis výhod", widget: string, required: false }
+      - { name: benefits, label: "Výhody", widget: list, required: false }
+      - name: groups
+        label: "Skupiny (nepovinné)"
+        widget: list
+        required: false
+        fields:
+          - { name: title, label: "Nadpis", widget: string }
+          - { name: listTitle, label: "Nadpis seznamu", widget: string, required: false }
+          - { name: list, label: "Seznam", widget: list, required: false }
+          - name: pricingItems
+            label: "Ceny"
+            widget: list
+            required: false
+            fields:
+              - { name: label, label: "Popis", widget: string }
+              - { name: price, label: "Cena", widget: string }
+          - { name: price, label: "Cena (text)", widget: string, required: false }
+          - { name: duration, label: "Doba", widget: string, required: false }
+      - name: pricing
+        label: "Ceník (boční panel)"
+        widget: object
+        required: false
+        fields:
+          - { name: title, label: "Nadpis", widget: string, required: false }
+          - name: items
+            label: "Položky"
+            widget: list
+            required: false
+            fields:
+              - { name: label, label: "Popis", widget: string }
+              - { name: price, label: "Cena", widget: string }
+          - { name: text, label: "Text", widget: text, required: false }
+          - { name: note, label: "Poznámka", widget: text, required: false }
+      - name: topics
+        label: "Témata"
+        widget: select
+        multiple: true
+        required: false
+        options: &topicOptions
+          - { value: mobilni-cisteni, label: "Mobilní čištění u zákazníka" }
+          - { value: myti-vozidel, label: "Mytí a čištění vozidel" }
+          - { value: cisteni-interieru-vozu, label: "Čištění interiérů vozů" }
+          - { value: tepani, label: "Tepování a hloubkové čištění" }
+          - { value: dezinfekce, label: "Dezinfekce a hygiena" }
+          - { value: impregnace, label: "Impregnace a ochrana povrchů" }
+          - { value: tlakove-cisteni, label: "Tlakové a strojové čištění" }
+          - { value: cisteni-dlazeb, label: "Čištění dlažeb a komunikací" }
+          - { value: uklid-kancelari, label: "Úklid kanceláří a firem" }
+          - { value: uklid-svj, label: "Úklid pro SVJ a bytové domy" }
+          - { value: prumyslove-cisteni, label: "Průmyslové a logistické prostory" }
+          - { value: zimni-zahrady, label: "Čištění zimních zahrad" }
+          - { value: malirske-prace, label: "Malířské práce a výmalby" }
+          - { value: soukromi-a-firmy, label: "Pro domácnosti i firmy" }
+      - { name: audience, label: "Pro koho je služba vhodná", widget: list, required: false }
+      - name: process
+        label: "Jak to probíhá"
+        widget: list
+        required: false
+        fields:
+          - { name: title, label: "Krok", widget: string }
+          - { name: text, label: "Popis", widget: text }
+      - { name: priceFactors, label: "Co ovlivňuje cenu", widget: list, required: false }
+      - { name: equipment, label: "Technika a chemie", widget: text, required: false }
+      - name: faq
+        label: "Časté dotazy"
+        widget: list
+        required: false
+        fields:
+          - { name: q, label: "Otázka", widget: string }
+          - { name: a, label: "Odpověď", widget: text }
+      - { name: body, label: "Úvodní text (markdown)", widget: markdown }
+
+  - name: lokality
+    label: "Lokality"
+    label_singular: "Lokalita"
+    folder: "src/lokality"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: [order, title]
+    fields:
+      - { name: title, label: "Titulek", widget: string }
+      - { name: region, label: "Oblast / popis místa", widget: string }
+      - { name: order, label: "Pořadí", widget: number, value_type: int }
+      - { name: topics, label: "Témata", widget: select, multiple: true, required: false, options: *topicOptions }
+      - { name: body, label: "Text (markdown)", widget: markdown }
+
+  - name: blog
+    label: "Blog"
+    label_singular: "Článek"
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: "Titulek", widget: string }
+      - { name: date, label: "Datum", widget: datetime, format: "YYYY-MM-DD", time_format: false }
+      - { name: topics, label: "Témata", widget: select, multiple: true, required: false, options: *topicOptions }
+      - { name: image, label: "Obrázek", widget: image }
+      - { name: excerpt, label: "Perex", widget: text }
+      - name: faq
+        label: "Časté dotazy"
+        widget: list
+        required: false
+        fields:
+          - { name: q, label: "Otázka", widget: string }
+          - { name: a, label: "Odpověď", widget: text }
+      - { name: body, label: "Článek (markdown)", widget: markdown }
+
+  - name: faq
+    label: "FAQ"
+    label_singular: "Otázka"
+    folder: "src/faq"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: [order, question]
+    fields:
+      - { name: question, label: "Otázka", widget: string }
+      - { name: order, label: "Pořadí", widget: number, value_type: int }
+      - { name: body, label: "Odpověď", widget: markdown }
+
+  - name: reference
+    label: "Reference"
+    label_singular: "Reference"
+    folder: "src/reference"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: [order, author]
+    fields:
+      - { name: author, label: "Autor", widget: string }
+      - name: authorType
+        label: "Typ autora"
+        widget: select
+        default: Organization
+        options:
+          - { value: Organization, label: "Firma / organizace" }
+          - { value: Person, label: "Osoba" }
+      - { name: order, label: "Pořadí", widget: number, value_type: int }
+      - { name: body, label: "Text reference", widget: markdown }
+
+  - name: temata
+    label: "Témata (číselník)"
+    files:
+      - name: seznam
+        label: "Seznam témat"
+        file: "src/_data/taxonomy.json"
+        fields:
+          - name: items
+            label: "Témata"
+            widget: list
+            fields:
+              - { name: slug, label: "Slug (URL, bez diakritiky)", widget: string }
+              - { name: label, label: "Název", widget: string }
+              - { name: description, label: "Popis", widget: text }
+              - { name: intro, label: "Úvodní odstavce", widget: list }
+              - name: faq
+                label: "Časté dotazy"
+                widget: list
+                fields:
+                  - { name: q, label: "Otázka", widget: string }
+                  - { name: a, label: "Odpověď", widget: text }
+
+  - name: kategorie
+    label: "Kategorie"
+    files:
+      - name: seznam
+        label: "Seznam kategorií"
+        file: "src/_data/categories.json"
+        fields:
+          - name: items
+            label: "Kategorie"
+            widget: list
+            fields:
+              - { name: id, label: "ID (pro přiřazení ve službách)", widget: string }
+              - { name: title, label: "Název", widget: string }
+              - { name: description, label: "Popis", widget: text }
+              - { name: image, label: "Obrázek", widget: image }
+
+  - name: nastaveni
+    label: "Nastavení webu"
+    files:
+      - name: firma
+        label: "Údaje firmy"
+        file: "src/_data/site.json"
+        fields:
+          - { name: name, label: "Název", widget: string }
+          - { name: legalName, label: "Fakturační název", widget: string }
+          - { name: tagline, label: "Claim", widget: string }
+          - { name: description, label: "Popis", widget: text }
+          - { name: domain, label: "Doména", widget: string }
+          - { name: phone, label: "Telefon (zobrazený)", widget: string }
+          - { name: phoneHref, label: "Telefon (odkaz tel:)", widget: string }
+          - { name: whatsapp, label: "WhatsApp (číslo bez +)", widget: string }
+          - { name: email, label: "E-mail", widget: string }
+          - { name: owner, label: "Majitel", widget: string }
+          - { name: ownerRole, label: "Funkce", widget: string }
+          - { name: hours, label: "Otevírací doba", widget: string }
+          - { name: area, label: "Oblast působnosti", widget: string }
+          - name: address
+            label: "Adresa"
+            widget: object
+            fields:
+              - { name: company, label: "Firma", widget: string }
+              - { name: street, label: "Ulice", widget: string }
+              - { name: city, label: "Město", widget: string }
+              - { name: ico, label: "IČO", widget: string }
+          - name: social
+            label: "Sociální sítě"
+            widget: object
+            fields:
+              - { name: facebook, label: "Facebook URL", widget: string }
+              - { name: instagram, label: "Instagram URL", widget: string }
+          - name: stats
+            label: "Statistiky"
+            widget: list
+            fields:
+              - { name: value, label: "Hodnota", widget: string }
+              - { name: label, label: "Popisek", widget: string }
+
+      - name: homepage
+        label: "Texty homepage"
+        file: "src/_data/home.json"
+        fields:
+          - name: hero
+            label: "Hero"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Nadřádek", widget: string }
+              - { name: title, label: "Titulek", widget: string }
+              - { name: subtitle, label: "Podtitulek", widget: string }
+              - { name: text, label: "Text", widget: text }
+              - { name: text2, label: "Text 2", widget: text }
+              - { name: image, label: "Obrázek pozadí", widget: image }
+              - { name: cardImage, label: "Obrázek karty", widget: image, required: false }
+              - { name: cta, label: "Text tlačítka", widget: string }
+          - name: intro
+            label: "Úvod"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+              - { name: text, label: "Text", widget: text }
+              - { name: title2, label: "Nadpis 2", widget: string }
+              - { name: text2, label: "Text 2", widget: text }
+          - name: cards
+            label: "Karty služeb"
+            widget: list
+            fields:
+              - { name: title, label: "Název", widget: string }
+              - { name: text, label: "Popis", widget: text }
+              - { name: image, label: "Obrázek", widget: image }
+              - { name: url, label: "Odkaz", widget: string }
+          - name: about
+            label: "O nás"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+              - { name: text, label: "Text", widget: text }
+              - { name: chem, label: "Chemie", widget: text }
+              - { name: image, label: "Obrázek", widget: image }
+          - name: whyUs
+            label: "Proč my"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+              - name: items
+                label: "Body"
+                widget: list
+                fields:
+                  - { name: title, label: "Nadpis", widget: string }
+                  - { name: text, label: "Text", widget: text }
+          - name: clients
+            label: "Klienti"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+              - { name: list, label: "Seznam", widget: list }
+          - name: testimonials
+            label: "Reference (nadpis)"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+          - name: process
+            label: "Postup"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+              - name: steps
+                label: "Kroky"
+                widget: list
+                fields:
+                  - { name: title, label: "Krok", widget: string }
+                  - { name: text, label: "Text", widget: text }
+          - name: infos
+            label: "Důležité informace"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+              - name: items
+                label: "Body"
+                widget: list
+                fields:
+                  - { name: title, label: "Nadpis", widget: string }
+                  - { name: text, label: "Text", widget: text }
+          - name: cta
+            label: "Výzva (CTA)"
+            widget: object
+            fields:
+              - { name: title, label: "Nadpis", widget: string }
+              - { name: text, label: "Text", widget: text }
+              - { name: image, label: "Obrázek", widget: image }
+
+      - name: galerie
+        label: "Fotogalerie"
+        file: "src/_data/gallery.json"
+        fields:
+          - name: items
+            label: "Fotky"
+            widget: list
+            fields:
+              - { name: image, label: "Fotka", widget: image }
+              - { name: caption, label: "Popisek", widget: string }

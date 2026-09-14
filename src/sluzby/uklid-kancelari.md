@@ -2,8 +2,8 @@
 title: "Pravidelný i jednorázový úklid kanceláří a firem"
 navTitle: "Úklid kanceláří"
 category: "uklidove-sluzby"
-image: "uklid-kancelari"
-cardImage: "card-uklidove-sluzby"
+image: "/assets/img/uklid-kancelari.jpg"
+cardImage: "/assets/img/card-uklidove-sluzby.jpg"
 excerpt: "Pravidelný i generální úklid kanceláří a firemních prostor v Praze – čistě, provoněně a reprezentativně."
 listTitle: "Seznam úkonů"
 list:

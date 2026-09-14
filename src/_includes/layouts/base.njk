@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} – blog" href="/feed.xml">
-  {% if preload %}<link rel="preload" as="image" href="{{ images[preload] }}" fetchpriority="high">{% endif %}
+  {% if preload %}<link rel="preload" as="image" href="{{ preload | imgSrc }}" fetchpriority="high">{% endif %}
   <link rel="stylesheet" href="{% asset '/assets/css/style.css' %}">
 
   <script type="application/ld+json">

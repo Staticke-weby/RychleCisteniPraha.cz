@@ -18,7 +18,7 @@ permalink: "/temata/index.html"
 <section class="section">
   <div class="container">
     <div class="cards cards--services">
-      {% for tag in taxonomy %}
+      {% for tag in taxonomy.items %}
       <article class="card">
         <a class="card__link" href="/temata/{{ tag.slug }}/">
           <div class="card__body">

@@ -17,13 +17,13 @@ permalink: "/sluzby/index.html"
 
 <nav class="anchor-nav" aria-label="Kategorie služeb">
   <div class="container anchor-nav__inner">
-    {% for category in categories %}
+    {% for category in categories.items %}
     <a href="#{{ category.id }}">{{ category.title }}</a>
     {% endfor %}
   </div>
 </nav>
 
-{% for category in categories %}
+{% for category in categories.items %}
 <section class="section{% if loop.index is even %} section--muted{% endif %}" id="{{ category.id }}">
   <div class="container">
     <header class="section__head">

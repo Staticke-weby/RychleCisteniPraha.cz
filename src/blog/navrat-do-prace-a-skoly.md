@@ -5,7 +5,7 @@ topics:
   - "uklid-kancelari"
   - "myti-vozidel"
   - "dezinfekce"
-image: "uklid-kancelari"
+image: "/assets/img/uklid-kancelari.jpg"
 excerpt: "Po prázdninách je čas dát do pořádku auto i kancelář. Praktický checklist na září – od vyčištění interiéru po úklid a dezinfekci kanceláří."
 faq:
   - q: "Jak vyčistit auto po dovolené?"

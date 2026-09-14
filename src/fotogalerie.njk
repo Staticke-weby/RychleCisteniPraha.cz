@@ -18,9 +18,9 @@ permalink: "/fotogalerie/index.html"
 <section class="section">
   <div class="container">
     <div class="gallery">
-      {% for key in images.gallery %}
-      <a class="gallery__item" href="{{ images[key] }}" data-lightbox-item data-caption="{{ gallery[key] }}" aria-label="Zvětšit fotografii: {{ gallery[key] }}">
-        {% picture key, gallery[key], "", "(max-width: 620px) 50vw, 25vw", "lazy" %}
+      {% for item in gallery.items %}
+      <a class="gallery__item" href="{{ item.image }}" data-lightbox-item data-caption="{{ item.caption }}" aria-label="Zvětšit fotografii: {{ item.caption }}">
+        {% picture item.image, item.caption, "", "(max-width: 620px) 50vw, 25vw", "lazy" %}
       </a>
       {% endfor %}
     </div>

@@ -2,8 +2,8 @@
 title: "Čištění zámkové dlažby"
 navTitle: "Zámková dlažba"
 category: "specialni-cisteni"
-image: "cisteni-zamkove-dlazby"
-cardImage: "card-cisteni-zamkove-dlazby"
+image: "/assets/img/cisteni-zamkove-dlazby.jpg"
+cardImage: "/assets/img/card-cisteni-zamkove-dlazby.jpg"
 excerpt: "Profesionální čištění zámkové dlažby u rodinných domů i komerčních objektů – bez mechu a plevele."
 listTitle: "Seznam úkonů"
 list:

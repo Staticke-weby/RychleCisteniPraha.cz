@@ -2,8 +2,8 @@
 title: "Čištění kabin kamionů a nákladních vozů"
 navTitle: "Kamiony a nákladní vozy"
 category: "cisteni-vozidel"
-image: "cisteni-kabin-kamionu"
-cardImage: "card-cisteni-vozidel"
+image: "/assets/img/cisteni-kabin-kamionu.jpg"
+cardImage: "/assets/img/card-cisteni-vozidel.jpg"
 excerpt: "Čistá kabina = příjemná jízda a vizitka firmy. Vyčistíme ji od podlahy po strop."
 listTitle: "Seznam úkonů"
 list:

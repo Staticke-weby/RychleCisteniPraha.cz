@@ -2,8 +2,8 @@
 title: "Čištění boxů, čalouněných a kožených židlí"
 navTitle: "Židle a boxy v restauracích"
 category: "cisteni-interieru"
-image: "cisteni-zidli-boxu"
-cardImage: "card-cisteni-interieru"
+image: "/assets/img/cisteni-zidli-boxu.jpg"
+cardImage: "/assets/img/card-cisteni-interieru.jpg"
 excerpt: "Profesionální čištění židlí a boxů v restauracích přímo u vás, včetně impregnace a provonění."
 listTitle: "Seznam úkonů"
 list:

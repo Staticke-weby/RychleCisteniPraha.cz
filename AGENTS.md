@@ -28,7 +28,7 @@ původních textů a obrázků, rozšířený o samostatné podstránky pro jedn
 | Generátor | **Eleventy (11ty) 3.x** | jediná přímá npm závislost |
 | Šablony | **Nunjucks** (`.njk`) | layout + partials, chaining |
 | Obsah | **Markdown + YAML front matter** | content-as-code, kolekce |
-| Data | JS moduly v `src/_data/` | site, home, categories, gallery |
+| Data | JSON v `src/_data/` | site, home, categories, taxonomy, gallery (editovatelné CMS) |
 | Styly | **Ruční CSS3** | custom properties, grid, media queries |
 | Skripty | **Vanilla JS** | bez knihoven (nav, lightbox) |
 | Obrázky | **WebP + AVIF + `srcset`** | varianty přes Python/Pillow |
@@ -37,7 +37,7 @@ původních textů a obrázků, rozšířený o samostatné podstránky pro jedn
 | Hosting | **Klasický sdílený hosting (Apache)** | nahrání `_site/` na FTP |
 | Server | **`.htaccess`** | 301, gzip, cache, 404, HTTPS+www, HSTS, CSP |
 | Formulář | **Žádný backend** | pouze `tel:`, `mailto:`, WhatsApp |
-| CMS | **Žádné** | obsah v Markdownu (možný přechod na git-CMS) |
+| CMS | **Sveltia CMS** | `/admin/`, Git backend, edituje Markdown i JSON |
 | Analytika / cookies | **Žádná** | |
 
 **Pravidlo: minimální počet npm závislostí.** Jediná přímá devDependency je
@@ -61,13 +61,17 @@ scripts/
   typography.mjs             české nezlomitelné mezery v obsahu
   check-links.mjs            kontrola interních odkazů v _site
   audit-meta.mjs             audit met title/description (délky, duplicity)
+admin/                       Sveltia CMS (passthrough → /admin/)
+  index.html                 načte Sveltia CMS z unpkg
+  config.yml                 backend + kolekce (editace Markdownu i JSON)
 src/
   _data/
-    site.js                  údaje firmy, kontakt, socials, statistiky
-    home.js                  texty domovské stránky
-    categories.js            kategorie služeb (id, title, description, image)
-    taxonomy.js              témata/štítky (slug, label, description)
-    gallery.js               popisky fotek galerie (klíč → caption)
+    site.json                údaje firmy, kontakt, socials, statistiky
+    home.json                texty domovské stránky
+    categories.json          kategorie služeb ({ items: [id, title, description, image] })
+    taxonomy.json            témata/štítky ({ items: [slug, label, intro, faq] })
+    gallery.json             fotky galerie ({ items: [image, caption] })
+    legacyRedirects.js       statické redirecty starých URL (bez .htaccess)
     images.json              logický název → cesta (generováno)
     srcsets.json             logický název → responzivní varianty (generováno)
   _includes/
@@ -95,7 +99,7 @@ src/
   blog/                      JEDEN MARKDOWN = JEDEN ČLÁNEK
     blog.11tydata.js
     <slug>.md                4 články
-  temata/                    archiv témat generovaný z taxonomy.js
+  temata/                    archiv témat generovaný z taxonomy.json
     temata.11tydata.js
     tema.njk
   sluzby.njk                 rozcestník služeb (permalink /sluzby/)
@@ -125,7 +129,7 @@ typech (content model) a verzován v Gitu (content-as-code). Kolekce se při bui
 ---
 title: "Čištění autobusů – pro dopravce i soukromníky"
 navTitle: "Autobusy"
-category: "cisteni-vozidel"      # id z categories.js
+category: "cisteni-vozidel"      # id z categories.json
 image: "cisteni-autobusu"        # klíč do images.json
 cardImage: "card-cisteni-vozidel"
 excerpt: "Krátký popis do karet a meta description."
@@ -149,8 +153,8 @@ Volitelná: `navTitle`, `cardImage`, `benefitsTitle`, `benefits[]`, `listTitle`,
 `list[]`, `groups[]` (title, list, listTitle, pricingItems[], price, duration),
 `pricing` (title, items[], text, note), `topics[]`, `audience[]`,
 `process[]` (title, text – **vlastní postup pro každou službu**), `priceFactors[]`,
-`equipment`, `faq[]` (q, a). `category` musí existovat v `categories.js`,
-`image`/`cardImage` musí existovat v `images.json`, `topics` v `taxonomy.js`.
+`equipment`, `faq[]` (q, a). `category` musí existovat v `categories.json`,
+`image`/`cardImage` musí existovat v `images.json` (nebo to být cesta), `topics` v `taxonomy.json`.
 
 ### FAQ = kolekce `faq`
 `src/faq/<slug>.md` s front matter `question`, `order` a tělem = odpověď.
@@ -173,7 +177,7 @@ textem (pozor na doorway pages). Layout přidá odkazy na služby, dojezd a sch�
 URL `/blog/<slug>/`, schéma `BlogPosting` + `FAQPage`.
 
 ### Témata = číselník `taxonomy`
-`src/_data/taxonomy.js` definuje témata (`slug`, `label`, `description`, `intro`, `faq`).
+`src/_data/taxonomy.json` definuje témata (`slug`, `label`, `description`, `intro`, `faq`).
 Služby, lokality i články je mají v `topics: [...]`. Archiv `/temata/<slug>/` se generuje
 přes pagination a sdružuje související obsah (interní prolinkování = hlavní SEO přínos).
 Kniha `intro` (2–3 odstavce) a `faq` zajišťují, že stránka tématu **není thin content**.
@@ -181,11 +185,11 @@ Neznámé téma shodí build. Šablona používá filtr `byTopic` a `topicLabel`
 
 ### Zdroj pravdy (single source of truth)
 - Text/ceny služeb → `.md` soubor. FAQ → `src/faq/`. Reference → `src/reference/`.
-- Lokality → `src/lokality/`. Články → `src/blog/`. Témata → `src/_data/taxonomy.js`.
-- Kategorie → `src/_data/categories.js`.
-- Kontakt, adresa, socials → `src/_data/site.js`.
-- Texty homepage → `src/_data/home.js`.
-- Popisky galerie → `src/_data/gallery.js`.
+- Lokality → `src/lokality/`. Články → `src/blog/`. Témata → `src/_data/taxonomy.json`.
+- Kategorie → `src/_data/categories.json`.
+- Kontakt, adresa, socials → `src/_data/site.json`.
+- Texty homepage → `src/_data/home.json`.
+- Popisky galerie → `src/_data/gallery.json`.
 - Obrázky → `src/assets/img/` + `images.json` (generováno `npm run images`).
 
 ---
@@ -222,9 +226,9 @@ a v souvisejících službách.
 **Nový článek:** `src/blog/<slug>.md` (`title`, `date`, `topics`, `image`, `excerpt`)
 + text v Markdownu.
 
-**Nové téma:** přidej do `src/_data/taxonomy.js` a přiřaď v `topics` u obsahu.
+**Nové téma:** přidej do `src/_data/taxonomy.json` a přiřaď v `topics` u obsahu.
 
-**Kategorie:** doplň do `src/_data/categories.js` (id musí odpovídat `category`).
+**Kategorie:** doplň do `src/_data/categories.json` (id musí odpovídat `category`).
 
 **Úprava textů/cen:** edituj příslušný `.md`, šablon se nedotýkej.
 
@@ -320,18 +324,10 @@ npm run check      # kontrola interních odkazů v _site (po buildu)
 - **Revize textů** lokalit, článků a služeb klientem (texty jsou připravené, ale je
   vhodné potvrdit věcnou správnost cen a rozsahu).
 - **Fotky před/po a reálné reference** – výrazně zvednou důvěru i obsah.
-- **Git-based CMS (Decap/Sveltia) – zvážit do budoucna, NE teď.** Umožnil by, aby klient
-  editoval obsah přes `/admin/` bez zásahu do kódu, ale **vyžaduje jiné hostování, než je
-  plánované (klasický FTP)**:
-  - **OAuth** – GitHub OAuth app + malý auth worker (např. `sveltia-cms-auth` na Cloudflare
-    Workers); bez něj se CMS nepřihlásí.
-  - **Build a nasazení** – FTP hosting sám build nespustí; řešit přes GitHub Actions
-    (build + upload na FTP), nebo web přesunout na Netlify/Vercel.
-  - **`taxonomy.js` → `taxonomy.json`** (JS modul CMS needituje jako položky).
-  - **Obrázky v CI** – dořešit `npm run variants` + `npm run images` po nahrání fotek.
-  - Lokálně se dá testovat přes `local_backend` (File System Access API, bez auth).
+- **Git-based CMS (Sveltia) – hotovo v Etapě 1** (viz sekce 14): data převedena na JSON,
+  obrázky na cesty, CI generuje varianty. Zbývá Etapa 2 (OAuth worker pro klienta).
 - i18n (podsložka na jazyk) přes 11ty data cascade.
-- Popisky fotek potvrdit/doplnit od klienta (`src/_data/gallery.js`).
+- Popisky fotek potvrdit/doplnit od klienta (`src/_data/gallery.json`).
 
 ---
 
@@ -370,9 +366,9 @@ Poznatky z modernizace webu – co nás potrápilo a jak to řešit příště.
   Použij filtr (`byTopic`) nebo `namespace()`.
 - **Directory data musí odpovídat názvu složky** (`blog.11tydata.js`), ne názvu šablony.
 - **WhatsApp předvyplňovat** přes `?text=` + filtr `urlencode`.
-- **Pozor na tvar `faq`.** V `taxonomy.js` je to pole dvojic (`item[0]`, `item[1]`),
-  ve službách a článcích objekt (`item.q`, `item.a`). Při generování/skriptech na to
-  nezapomeň, jinak se vypíše `undefined`.
+- **Tvar `faq` je nyní jednotný.** Všude (témata, služby, články) je to pole objektů
+  `{ q, a }` (`item.q`, `item.a`). Původně byla témata pole dvojic (`item[0]`, `item[1]`) –
+  při migraci na JSON sjednoceno, pozor na starší úryvky kódu.
 
 ### Obsah a SEO
 - **Thin content je největší SEO riziko.** Archivy (témata, lokality) nesmí být jen
@@ -431,7 +427,7 @@ Poznatky z modernizace webu – co nás potrápilo a jak to řešit příště.
 - **`file://` náhled nefunguje** – absolutní cesty `/assets/...`; vždy `npm run serve`.
 - **Validuj front matter** – build musí spadnout při chybějícím poli; ověř i negativním
   testem (dočasně rozbitý soubor).
-- **Nezdvojuj obsah** – reference ber z kolekce, ne i z `home.js`.
+- **Nezdvojuj obsah** – reference ber z kolekce, ne i z `home.json`.
 - **Při refactoru hledej všechna použití** – na Windows není `rg`; použij hledání v editoru.
 - **Dev server po změně konfigurace restartuj** (`npm run serve`) – manifesty se čtou při startu.
 - **Nepreloadovat nepoužívaný obrázek.** Fallback `ogImage or 'hero'` preloadoval logo na všech
@@ -506,3 +502,38 @@ Co kontrolovat u každé stránky a před nasazením.
 - **Sběr recenzí** na Google + reálné reference (pak lze doplnit `aggregateRating`).
 - **Google Search Console** – nahrát `sitemap.xml`, hlídat 404 a podle nich doplnit 301.
 - Konzistentní **NAP** (název, adresa, telefon) a citace v katalozích.
+
+---
+
+## 14. CMS (Sveltia)
+
+Git-based CMS pro editaci hotového obsahu bez zásahu do kódu. Admin je v `admin/`
+(mimo `src/`) a do buildu se kopíruje přes `addPassthroughCopy({ admin: "admin" })`,
+takže běží na `/admin/`.
+
+- **Backend:** GitHub (`Staticke-weby/RychleCisteniPraha.cz`, branch `master`).
+  Editace = commit do Gitu → GitHub Actions přebuildí a nasadí. Žádný backend/DB.
+- **Autentizace:**
+  - **Etapa 1 (hotovo): `auth_methods: [token]`** – editor vloží GitHub Personal
+    Access Token (fine-grained, Contents read/write). Bez serveru.
+  - **Etapa 2 (OAuth pro netechnické uživatele):** nasadit `sveltia/sveltia-cms-auth`
+    na Cloudflare Workers, zaregistrovat GitHub OAuth App (callback `<worker>/callback`),
+    nastavit ve workeru `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` a `ALLOWED_DOMAINS`,
+    v `admin/config.yml` doplnit `backend.base_url` (a `auth_methods: [oauth, token]`).
+    PKCE GitHub pro SPA zatím nepodporuje (odloženo), proto worker.
+- **Kolekce v `admin/config.yml`:** služby, lokality, blog, FAQ, reference (Markdown),
+  + souborové kolekce pro `taxonomy.json`, `categories.json`, `site.json`, `home.json`,
+  `gallery.json`.
+- **Data jako JSON:** JS moduly nejdou editovat jako položky, proto jsou data v JSON
+  (`site`, `home`, `categories`, `taxonomy`, `gallery`). Pole (`categories`, `taxonomy`,
+  `gallery`) jsou obalená do `{ "items": [...] }` (Sveltia edituje objektové soubory).
+- **Obrázky:** `image`/`cardImage` se v obsahu ukládají jako **cesta** (`/assets/img/...`),
+  shortcode `{% picture %}` ale umí i původní **klíč** z `images.json`, takže starší obsah
+  funguje dál. Filtr `imgSrc` přeloží klíč i cestu (pro JSON-LD).
+- **Nahrávání fotek:** media složka `src/assets/img` → `public_folder /assets/img`.
+  Varianty WebP/AVIF a manifesty generuje Python/Pillow, proto je **CI** (Actions)
+  spouští před buildem (`npm run variants` → `npm run images`).
+- **`/admin` a CSP:** na GitHub Pages CSP není → funguje. Na FTP/Apache by CSP v `.htaccess`
+  musela dovolit `https://unpkg.com` (`script-src`) a `https://api.github.com`
+  (`connect-src`).
+- **Pozor na slug:** nový obsah musí mít ASCII slug bez diakritiky (konvence URL).

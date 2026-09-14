@@ -5,7 +5,7 @@ topics:
   - "tepani"
   - "impregnace"
   - "cisteni-interieru-vozu"
-image: "tepovani-kobercu-sedacek"
+image: "/assets/img/tepovani-kobercu-sedacek.jpg"
 excerpt: "Praktický návod, jak udržet kožené sedačky čisté, pružné a bez prasklin – a kdy je lepší zavolat profesionály."
 faq:
   - q: "Jak často kůži ošetřovat?"

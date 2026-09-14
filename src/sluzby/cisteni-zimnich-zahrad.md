@@ -2,8 +2,8 @@
 title: "Vysoce šetrné čištění zimních zahrad"
 navTitle: "Zimní zahrady"
 category: "specialni-cisteni"
-image: "cisteni-zimnich-zahrad"
-cardImage: "card-cisteni-zimnich-zahrad"
+image: "/assets/img/cisteni-zimnich-zahrad.jpg"
+cardImage: "/assets/img/card-cisteni-zimnich-zahrad.jpg"
 excerpt: "Ruční mytí střechy i bočních skel zimních zahrad po celé ČR. Doprava vždy zdarma."
 listTitle: "Seznam úkonů"
 list:

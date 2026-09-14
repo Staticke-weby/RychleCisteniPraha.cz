@@ -2,8 +2,8 @@
 title: "Čištění pro taxi, carsharing a firemní flotily (operativní leasing)"
 navTitle: "Taxi, carsharing a flotily"
 category: "cisteni-vozidel"
-image: "cisteni-flotil"
-cardImage: "card-cisteni-vozidel"
+image: "/assets/img/cisteni-flotil.jpg"
+cardImage: "/assets/img/card-cisteni-vozidel.jpg"
 excerpt: "Pravidelné i jednorázové čištění interiérů přizpůsobené vysoké frekvenci využívání, s důrazem na dezinfekci."
 listTitle: "Seznam úkonů"
 list:

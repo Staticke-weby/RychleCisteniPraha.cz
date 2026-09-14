@@ -5,7 +5,7 @@ topics:
   - "myti-vozidel"
   - "cisteni-interieru-vozu"
   - "soukromi-a-firmy"
-image: "cisteni-flotil"
+image: "/assets/img/cisteni-flotil.jpg"
 excerpt: "Čisté auto se prodává rychleji a za lepší cenu. Ukážeme, co se před prodejem vyplatí vyčistit, kolik to stojí a čeho se vyvarovat."
 faq:
   - q: "Vyplatí se čištění před prodejem?"

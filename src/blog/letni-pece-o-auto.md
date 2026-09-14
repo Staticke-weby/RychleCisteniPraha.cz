@@ -5,7 +5,7 @@ topics:
   - "myti-vozidel"
   - "cisteni-interieru-vozu"
   - "mobilni-cisteni"
-image: "cisteni-interieru-osobnich-aut"
+image: "/assets/img/cisteni-interieru-osobnich-aut.jpg"
 excerpt: "Léto dá autu zabrat. Poradíme, jak se zbavit písku, hmyzu a skvrn od opalovacího krému a jak udržet interiér svěží během dovolených."
 faq:
   - q: "Jak často mýt auto v létě?"

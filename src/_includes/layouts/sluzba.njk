@@ -10,7 +10,7 @@ layout: layouts/base.njk
   "description": {{ excerpt | dump | safe }},
   "serviceType": {{ category.title | dump | safe }},
   "url": {{ (site.domain + page.url) | dump | safe }},
-  "image": {{ (site.domain + images[image]) | dump | safe }},
+  "image": {{ (site.domain + (image | imgSrc)) | dump | safe }},
   "provider": { "@type": "LocalBusiness", "@id": {{ (site.domain + "/#organization") | dump | safe }} },
   "areaServed": { "@type": "City", "name": "Praha" }
 }

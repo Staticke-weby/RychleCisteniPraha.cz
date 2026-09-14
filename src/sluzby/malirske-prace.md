@@ -2,8 +2,8 @@
 title: "Malířské práce a výmalba (nejen) pro developery"
 navTitle: "Malířské práce"
 category: "doplnkove-sluzby"
-image: "malirske-prace"
-cardImage: "card-malirske-prace"
+image: "/assets/img/malirske-prace.jpg"
+cardImage: "/assets/img/card-malirske-prace.jpg"
 excerpt: "Výmalby bytů, kanceláří i komerčních prostor včetně přípravy podkladu a úklidu. Naceníme zdarma."
 listTitle: "Proces"
 list:

@@ -53,13 +53,13 @@ permalink: "/mapa-stranek/index.html"
     <div class="sitemap__col prose">
       <h2>Témata</h2>
       <ul>
-        {% for t in taxonomy %}
+        {% for t in taxonomy.items %}
         <li><a href="/temata/{{ t.slug }}/">{{ t.label }}</a></li>
         {% endfor %}
       </ul>
     </div>
 
-    {% for cat in categories %}
+    {% for cat in categories.items %}
     <div class="sitemap__col prose">
       <h2>{{ cat.title }}</h2>
       <ul>

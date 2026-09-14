@@ -5,7 +5,7 @@ topics:
   - "myti-vozidel"
   - "cisteni-interieru-vozu"
   - "mobilni-cisteni"
-image: "cisteni-interieru-osobnich-aut"
+image: "/assets/img/cisteni-interieru-osobnich-aut.jpg"
 excerpt: "Orientační ceník hloubkového čištění auta v Praze podle velikosti vozu i typu služby. Plus jak ušetřit a co cenu ovlivňuje."
 faq:
   - q: "Kolik stojí hloubkové čištění interiéru?"

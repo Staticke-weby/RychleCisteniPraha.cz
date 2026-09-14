@@ -2,8 +2,8 @@
 title: "Úklid společných prostor pro SVJ a bytová družstva"
 navTitle: "SVJ a bytové domy"
 category: "uklidove-sluzby"
-image: "uklid-spolecnych-prostor-svj"
-cardImage: "card-uklidove-sluzby"
+image: "/assets/img/uklid-spolecnych-prostor-svj.jpg"
+cardImage: "/assets/img/card-uklidove-sluzby.jpg"
 excerpt: "Spolehlivý úklid chodeb, schodišť, výtahů, sklepů i vstupních prostor. Pravidelně 1× až 3× týdně."
 listTitle: "Seznam úkonů"
 list:

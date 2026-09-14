@@ -1,7 +1,8 @@
 import fs from "node:fs";
 import crypto from "node:crypto";
-import categories from "./src/_data/categories.js";
-import taxonomy from "./src/_data/taxonomy.js";
+const loadJson = (f) => JSON.parse(fs.readFileSync(`src/_data/${f}`, "utf8"));
+const categories = loadJson("categories.json").items;
+const taxonomy = loadJson("taxonomy.json").items;
 
 // Base path (subpath) pro nasazení mimo kořen domény, např. dočasná GitHub URL
 // https://staticke-weby.github.io/RychleCisteniPraha.cz/ → BASE_PATH=/RychleCisteniPraha.cz/
@@ -18,6 +19,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
+  eleventyConfig.addPassthroughCopy({ admin: "admin" });
 
   eleventyConfig.addShortcode("year", () => new Date().getFullYear());
 
@@ -41,9 +43,12 @@ export default function (eleventyConfig) {
   try { IMAGES = JSON.parse(fs.readFileSync("src/_data/images.json", "utf8")); } catch {}
   try { SRCSETS = JSON.parse(fs.readFileSync("src/_data/srcsets.json", "utf8")); } catch {}
 
-  eleventyConfig.addShortcode("picture", (key, alt, cls, sizes, loading, fetchpriority) => {
-    const src = IMAGES[key];
-    if (!src) return "";
+  eleventyConfig.addShortcode("picture", (value, alt, cls, sizes, loading, fetchpriority) => {
+    const key = IMAGES[value]
+      ? value
+      : String(value || "").replace(/^.*\//, "").replace(/\.[a-z0-9]+$/i, "");
+    const src = IMAGES[value] || IMAGES[key] || value;
+    if (!src || !String(src).startsWith("/")) return "";
     const meta = SRCSETS[key];
     const s = sizes || "100vw";
     const l = loading || "lazy";
@@ -66,6 +71,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("bySlug", (items, slugs) =>
     (items || []).filter((i) => slugs.includes(i.fileSlug))
   );
+
+  // Přeloží hodnotu obrázku (klíč z images.json i přímá cesta) na cestu.
+  eleventyConfig.addFilter("imgSrc", (value) => (value ? IMAGES[value] || value : ""));
 
   // Kontextové prolinkování služba → lokalita (podle kategorie)
   const LOCALITIES_BY_CATEGORY = {
@@ -104,7 +112,9 @@ export default function (eleventyConfig) {
       }
       if (d.category && !categoryIds.has(d.category)) errs.push(`neznámá kategorie "${d.category}"`);
       for (const key of ["image", "cardImage"]) {
-        if (d[key] && !(d[key] in IMAGES)) errs.push(`obrázek "${d[key]}" není v images.json`);
+        if (d[key] && !(d[key] in IMAGES) && !String(d[key]).startsWith("/assets/")) {
+          errs.push(`obrázek "${d[key]}" není platný klíč ani cesta`);
+        }
       }
       for (const t of d.topics || []) if (!topicSlugs.has(t)) errs.push(`neznámé téma "${t}"`);
       fail(item, errs);
@@ -151,7 +161,7 @@ export default function (eleventyConfig) {
       const errs = [];
       for (const key of ["title", "date", "excerpt", "image"]) if (!item.data[key]) errs.push(`chybí "${key}"`);
       for (const t of item.data.topics || []) if (!topicSlugs.has(t)) errs.push(`neznámé téma "${t}"`);
-      if (item.data.image && !(item.data.image in IMAGES)) errs.push(`obrázek "${item.data.image}" není v images.json`);
+      if (item.data.image && !(item.data.image in IMAGES) && !String(item.data.image).startsWith("/assets/")) errs.push(`obrázek "${item.data.image}" není platný klíč ani cesta`);
       fail(item, errs);
     }
     return items.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));

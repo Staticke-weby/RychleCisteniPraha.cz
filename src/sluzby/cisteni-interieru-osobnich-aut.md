@@ -2,8 +2,8 @@
 title: "Čištění interiérů osobních aut, SUV a limuzín"
 navTitle: "Osobní auta, SUV a limuzíny"
 category: "cisteni-vozidel"
-image: "cisteni-interieru-osobnich-aut"
-cardImage: "card-cisteni-vozidel"
+image: "/assets/img/cisteni-interieru-osobnich-aut.jpg"
+cardImage: "/assets/img/card-cisteni-vozidel.jpg"
 excerpt: "Dopřejte svému vozu novou jiskru s profesionálním mobilním čištěním interiéru – přijedeme k vám."
 benefitsTitle: "Výhody"
 benefits:

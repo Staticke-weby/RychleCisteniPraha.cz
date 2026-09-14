@@ -2,8 +2,8 @@
 title: "Profesionální úklid a čištění kin a divadel"
 navTitle: "Kina a divadla"
 category: "cisteni-interieru"
-image: "cisteni-kin-divadel"
-cardImage: "card-cisteni-interieru"
+image: "/assets/img/cisteni-kin-divadel.jpg"
+cardImage: "/assets/img/card-cisteni-interieru.jpg"
 excerpt: "Komplexní úklid a tepování sedaček v sálech, foyer i zázemí. Jednorázově i pravidelně."
 listTitle: "Seznam úkonů"
 list:

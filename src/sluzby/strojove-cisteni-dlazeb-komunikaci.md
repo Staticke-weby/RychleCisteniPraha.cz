@@ -2,8 +2,8 @@
 title: "Strojové čištění dlažeb a komunikací v logistických centrech"
 navTitle: "Dlažby a komunikace"
 category: "prumyslove-cisteni"
-image: "strojove-cisteni-dlazeb-komunikaci"
-cardImage: "card-prumyslove-cisteni"
+image: "/assets/img/strojove-cisteni-dlazeb-komunikaci.jpg"
+cardImage: "/assets/img/card-prumyslove-cisteni.jpg"
 excerpt: "Odstraňujeme prach, bláto, mastnotu i zbytky gumy z velkých ploch bez omezení provozu areálu."
 listTitle: "Seznam úkonů"
 list:

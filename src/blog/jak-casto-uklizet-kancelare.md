@@ -5,7 +5,7 @@ topics:
   - "uklid-kancelari"
   - "dezinfekce"
   - "soukromi-a-firmy"
-image: "uklid-kancelari"
+image: "/assets/img/uklid-kancelari.jpg"
 excerpt: "Průvodce frekvencí a rozsahem úklidu kanceláří – od denní údržby po generální úklid a dezinfekci, včetně orientační ceny."
 faq:
   - q: "Jak často uklízet kanceláře?"

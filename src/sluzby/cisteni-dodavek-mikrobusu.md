@@ -2,8 +2,8 @@
 title: "Čištění dodávek a mikrobusů – užitkové i obytné"
 navTitle: "Dodávky a mikrobusy"
 category: "cisteni-vozidel"
-image: "cisteni-dodavek-mikrobusu"
-cardImage: "card-cisteni-vozidel"
+image: "/assets/img/cisteni-dodavek-mikrobusu.jpg"
+cardImage: "/assets/img/card-cisteni-vozidel.jpg"
 excerpt: "Hloubkové čištění kabin i nákladových prostor pro užitkové i obytné dodávky v Praze a okolí."
 groups:
   - title: "Užitková dodávka"

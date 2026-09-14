@@ -14,7 +14,7 @@
     <div class="footer__col">
       <h2 class="footer__title">Služby</h2>
       <ul class="footer__links">
-        {% for category in categories %}
+        {% for category in categories.items %}
         <li><a href="/sluzby/#{{ category.id }}">{{ category.title }}</a></li>
         {% endfor %}
       </ul>

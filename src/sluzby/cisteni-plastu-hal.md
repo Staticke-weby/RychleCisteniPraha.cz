@@ -2,8 +2,8 @@
 title: "Profesionální čištění plášťů výrobních hal"
 navTitle: "Pláště výrobních hal"
 category: "prumyslove-cisteni"
-image: "cisteni-plastu-hal"
-cardImage: "card-prumyslove-cisteni"
+image: "/assets/img/cisteni-plastu-hal.jpg"
+cardImage: "/assets/img/card-prumyslove-cisteni.jpg"
 excerpt: "Mytí vnitřních i vnějších plášťů hal parní metodou, vysokotlakem i ručně, včetně práce z plošin."
 groups:
   - title: "Exteriér budov"
