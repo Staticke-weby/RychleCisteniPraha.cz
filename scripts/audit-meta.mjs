@@ -19,6 +19,8 @@ const files = [];
 const rows = [];
 for (const f of files) {
   const html = fs.readFileSync(f, "utf8");
+  // Neindexovatelné stránky (404, přesměrování) do auditu met nezahrnujeme.
+  if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) continue;
   const title = (html.match(/<title>([\s\S]*?)<\/title>/i) || [, ""])[1].trim();
   const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/i) || [, ""])[1].trim();
   const url = f.replace(/\\/g, "/").replace(/^_site\//, "/").replace(/index\.html$/, "");

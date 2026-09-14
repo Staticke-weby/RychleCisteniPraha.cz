@@ -289,6 +289,13 @@ npm run check      # kontrola interních odkazů v _site (po buildu)
 - **301 přesměrování** původních Google Sites URL přes `.htaccess`.
 - **HTTPS + www**, HSTS a CSP vynuceny v `.htaccess`.
   (CSP má `script-src 'unsafe-inline'` kvůli inline JSON-LD.)
+- **`.htaccess` zůstává** pro FTP/Apache. Protože GitHub Pages `.htaccess` neumí,
+  jsou navíc **statické redirecty** (`src/_data/legacyRedirects.js` + `src/presmerovani.njk`
+  → meta refresh + JS) a **catch-all v `main.js`** pro `/RychleCisteniPraha/*`.
+- **Dvojí nasazení:** klasický FTP/Apache (base path `/`, `.htaccess` platí) a
+  dočasně **GitHub Pages** přes Actions. Kvůli subpath (`/<repo>/`) je build
+  parametrizovaný přes `BASE_PATH` (výchozí `/`) a `url` transform prefixuje
+  root-relative cesty. CSS a webmanifest proto používají **relativní** cesty.
 - **Cache-busting** assetů přes `?v=<hash>` (`{% asset %}`) + dlouhá cache v `.htaccess`.
 - **Validace front matter** při buildu (chybí pole → build spadne).
 - **Max 3 boxíky v řadě** a **hero s obrázkovým pozadím** (požadavky klienta).
@@ -413,6 +420,12 @@ Poznatky z modernizace webu – co nás potrápilo a jak to řešit příště.
   na rich results; generuj je z kolekcí, ať nevzniká duplikace.
 
 ### Prostředí a workflow
+- **GitHub Pages neumí `.htaccess`** – 301 ze starých URL řeš statickými přesměrováními
+  (`legacyRedirects` + `presmerovani.njk`) a catch-all JS v `main.js` pro `/RychleCisteniPraha/*`.
+  `.htaccess` přesto **ponech** (FTP/Apache ho využije).
+- **Subpath (projektová GitHub URL)** – build čte `BASE_PATH` (např. `/RychleCisteniPraha.cz/`);
+  transform prefixuje `href`/`src`/`poster`/`srcset`. CSS `url()` a webmanifest musí být
+  **relativní**, jinak se na subpath rozbijí. Při `BASE_PATH=/` je výstup beze změny.
 - **Windows PowerShell zobrazuje diakritiku jako mojibake** – soubory jsou v pořádku
   (UTF-8), nepanikař; ověřuj přes `[System.Text.Encoding]::UTF8`.
 - **`file://` náhled nefunguje** – absolutní cesty `/assets/...`; vždy `npm run serve`.

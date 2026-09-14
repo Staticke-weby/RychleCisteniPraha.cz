@@ -2,6 +2,15 @@
 (function () {
   "use strict";
 
+  /* ---------- Přesměrování starých Google Sites URL (funguje i bez .htaccess) ---------- */
+  (function () {
+    var m = location.pathname.match(/\/RychleCisteniPraha(?=\/|$)/);
+    if (!m) return;
+    var rest = location.pathname.slice(m.index + m[0].length).replace(/^\//, "");
+    var base = location.pathname.slice(0, m.index + 1);
+    location.replace(base + rest + location.search + location.hash);
+  })();
+
   /* ---------- Mobilní navigace ---------- */
   var toggle = document.querySelector("[data-nav-toggle]");
   var nav = document.querySelector("[data-nav]");

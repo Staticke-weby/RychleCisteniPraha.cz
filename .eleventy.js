@@ -3,6 +3,16 @@ import crypto from "node:crypto";
 import categories from "./src/_data/categories.js";
 import taxonomy from "./src/_data/taxonomy.js";
 
+// Base path (subpath) pro nasazení mimo kořen domény, např. dočasná GitHub URL
+// https://staticke-weby.github.io/RychleCisteniPraha.cz/ → BASE_PATH=/RychleCisteniPraha.cz/
+// Na vlastní doméně (FTP/Apache) se nepoužívá → výchozí "/".
+const BASE_PATH = (() => {
+  let p = process.env.BASE_PATH || "/";
+  if (!p.startsWith("/")) p = "/" + p;
+  if (!p.endsWith("/")) p += "/";
+  return p;
+})();
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
@@ -172,6 +182,32 @@ export default function (eleventyConfig) {
     return `<svg class="icon icon--${name}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`;
   });
 
+  // Prefixuje root-relative URL (href/src/poster/srcset) o base path při subpath nasazení.
+  // Při BASE_PATH="/" je transformace no-op, takže výstup na FTP/Apache je beze změny.
+  eleventyConfig.addTransform("basePath", function (content, outputPath) {
+    if (BASE_PATH === "/" || !outputPath || !String(outputPath).endsWith(".html")) return content;
+    const prefix = BASE_PATH.slice(0, -1);
+    const already = (u) => u.startsWith("//") || u.startsWith("/#") || u.startsWith(BASE_PATH);
+    let out = content.replace(/(\s(?:href|src|poster)=")(\/[^"]*)"/g, (m, attr, url) =>
+      already(url) ? m : `${attr}${prefix}${url}"`
+    );
+    out = out.replace(/srcset="([^"]*)"/g, (m, set) => {
+      const rewritten = set
+        .split(",")
+        .map((part) => {
+          const t = part.trim();
+          const sp = t.indexOf(" ");
+          const url = sp === -1 ? t : t.slice(0, sp);
+          const rest = sp === -1 ? "" : t.slice(sp);
+          if (!url.startsWith("/") || already(url)) return t;
+          return prefix + url + rest;
+        })
+        .join(", ");
+      return `srcset="${rewritten}"`;
+    });
+    return out;
+  });
+
   return {
     dir: {
       input: "src",
@@ -182,6 +218,6 @@ export default function (eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     templateFormats: ["njk", "md", "html", "11ty.js"],
-    pathPrefix: "/",
+    pathPrefix: BASE_PATH,
   };
 }

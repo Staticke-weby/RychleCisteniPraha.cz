@@ -901,7 +901,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 
 /* ---------- 24. Hero s obrázkem (homepage) ----------------- */
-.hero--home { --hero-image: url('/assets/img/gallery-18.jpg'); }
+.hero--home { --hero-image: url('../img/gallery-18.jpg'); }
 
 /* ---------- 25. FAQ ---------------------------------------- */
 .faq {
