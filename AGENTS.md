@@ -537,3 +537,4 @@ takže běží na `/admin/`.
   musela dovolit `https://unpkg.com` (`script-src`) a `https://api.github.com`
   (`connect-src`).
 - **Pozor na slug:** nový obsah musí mít ASCII slug bez diakritiky (konvence URL).
+- **Návod pro klienta** (generování tokenu a přihlášení): `docs/navod-cms-token.md`.
