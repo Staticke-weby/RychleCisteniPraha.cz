@@ -53,4 +53,4 @@ Firmy s vozovým parkem by měly vozy před zimou řádně vyčistit a zkontrolo
 
 ## Závěr
 
-Září je ideální čas začít znovu a čistě. Ozvěte se nám a připravíme vám nabídku na míru – pro domácnost i firmu.
+Září je ideální čas začít znovu a čistě. Ozvěte se nám a rádi vám připravíme nabídku na míru – pro domácnost i firmu.
