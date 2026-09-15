@@ -315,7 +315,7 @@ npm run check      # kontrola interních odkazů v _site (po buildu)
 - **Globální OG obrázek 1200×630** (`/assets/img/og-image.jpg`) pro konzistentní sdílení.
 - **HTML mapa stránek** (`/mapa-stranek/`) vedle XML sitemapy; patička odkazuje na 123stranky.cz.
 - **RSS/Atom feed** blogu na `/feed.xml`; v `<head>` je `<link rel="alternate">`.
-- **Autor článků = Radek Ingr** (schéma `Person` + bio box u článku) kvůli E-E-A-T.
+- **Autor článků = Radek Ingr** (schéma `Person`) kvůli E-E-A-T.
 - **Prolinkování služba ↔ lokalita** – služby odkazují na relevantní lokality (podle kategorie).
 - **Kontrast:** malý zlatý text na světlém pozadí používá `--gold-text` (tmavší) místo `--gold`.
 
@@ -449,6 +449,29 @@ Poznatky z modernizace webu – co nás potrápilo a jak to řešit příště.
 - **Kontrast malého zlatého textu** na bílém nestačí (WCAG) – používej `--gold-text`, `--gold`
   jen na tmavém pozadí nebo jako dekoraci.
 - **Lightbox má focus trap** (Tab cyklí mezi tlačítky) a vrací fokus po zavření.
+- **Jeden vadný článek z CMS shodí celý deploy.** Build validuje všechny kolekce; chyba
+  v jediném `.md` (např. neplatný obrázek) znamená, že se nenasadí **nic**, ani platné
+  změny. Proto jsou obrázky tolerantní (viz „Obrázky") a obsah z CMS je dobré po uložení
+  zkontrolovat (nový commit + zelený Action).
+- **`_site` drží smazané výstupy.** Po smazání zdroje může v `_site` zůstat starý HTML
+  a `npm run check` pak počítá víc stránek, než má. Před kontrolou/commitem spusť
+  `npm run clean` a znovu build.
+- **GitHub Actions: hlídej verze akcí.** Starší verze běží na Node 20 (deprecation warning);
+  aktuální (Node 24) jsou `actions/checkout@v5`, `configure-pages@v6`, `setup-node@v5`,
+  `setup-python@v6` (`upload-pages-artifact@v3` a `deploy-pages@v4` zůstávají).
+- **Testovací obsah necommituj.** Testovací článek/stránka z CMS shodí build a zůstane
+  na webu; po ověření ho smaž (a ověř `npm run clean` → build → check).
+
+### CMS (Sveltia)
+- **Nový obsah se do výpisů přidává automaticky.** Kolekce jsou řízené `tags`
+  (`blog.11tydata.js` → `tags: ["clanky"]`), takže článek se sám objeví na `/blog/`,
+  v sitemapě, RSS i tématech; šablony se needitují. Když se neobjeví, hledej spadlý
+  Action nebo necommitnuté uložení.
+- **Uložení v CMS = commit.** Po uložení zkontroluj nový commit v repu a běh Actions;
+  bez commitu se web nezmění.
+- **„Resource not accessible by personal access token"** při ukládání = token nemá
+  **Contents: Read and write** (nebo je špatný **Resource owner** = organizace). Classic
+  token potřebuje scope `repo`.
 
 ### Co se osvědčilo
 - **Content-as-code** (Markdown + kolekce) pro konzistenci a snadný růst.
@@ -545,4 +568,10 @@ takže běží na `/admin/`.
   musela dovolit `https://unpkg.com` (`script-src`) a `https://api.github.com`
   (`connect-src`).
 - **Pozor na slug:** nový obsah musí mít ASCII slug bez diakritiky (konvence URL).
+- **Servisní účet (machine user) místo klientského GitHubu:** účet je členem org a má
+  write jen na daný web (ideálně přes tým), tokeny se generují **fine-grained** s
+  **Resource owner = `Staticke-weby`**, *Only select repositories* = dané repo,
+  **Contents: Read and write**, expirace **1 rok**. Jeden token = jeden web, rotace
+  1× ročně (a při odchodu klienta). Klient tak GitHub vůbec nepotřebuje. Návod:
+  `docs/navod-token-spravce.md`.
 - **Návod pro klienta** (generování tokenu a přihlášení): `docs/navod-cms-token.md`.

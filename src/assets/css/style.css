@@ -1054,13 +1054,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .sitemap { grid-template-columns: 1fr; }
 }
 
-/* ---------- 31. Autor článku ------------------------------- */
-.author-box p { margin: 0; max-width: 78ch; color: var(--text); }
-.author-box strong { color: var(--ink); }
-.author-box a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-.author-box a:hover { color: var(--gold-text); }
-
-/* ---------- 32. Prolinkování služba → lokalita ------------- */
+/* ---------- 31. Prolinkování služba → lokalita ------------- */
 .service__localities {
   margin-top: 1.75rem;
   padding: 1rem 1.25rem;
