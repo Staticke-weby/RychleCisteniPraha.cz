@@ -43,7 +43,18 @@ export default function (eleventyConfig) {
   try { IMAGES = JSON.parse(fs.readFileSync("src/_data/images.json", "utf8")); } catch {}
   try { SRCSETS = JSON.parse(fs.readFileSync("src/_data/srcsets.json", "utf8")); } catch {}
 
+  // Externí URL obrázku (např. vložená v CMS) – povolena jako fallback, aby build nespadl.
+  const isExternalUrl = (value) => /^https?:\/\//i.test(String(value || ""));
+  const isValidImage = (value) =>
+    value in IMAGES || String(value).startsWith("/assets/") || isExternalUrl(value);
+
   eleventyConfig.addShortcode("picture", (value, alt, cls, sizes, loading, fetchpriority) => {
+    const l = loading || "lazy";
+    const fp = fetchpriority ? ` fetchpriority="${fetchpriority}"` : "";
+    const clsAttr = cls ? ` class="${cls}"` : "";
+    if (isExternalUrl(value)) {
+      return `<img src="${value}" alt="${alt}"${clsAttr} loading="${l}" decoding="async"${fp}>`;
+    }
     const key = IMAGES[value]
       ? value
       : String(value || "").replace(/^.*\//, "").replace(/\.[a-z0-9]+$/i, "");
@@ -51,9 +62,6 @@ export default function (eleventyConfig) {
     if (!src || !String(src).startsWith("/")) return "";
     const meta = SRCSETS[key];
     const s = sizes || "100vw";
-    const l = loading || "lazy";
-    const fp = fetchpriority ? ` fetchpriority="${fetchpriority}"` : "";
-    const clsAttr = cls ? ` class="${cls}"` : "";
     let sources = "";
     if (meta && meta.avif && meta.avif.length) {
       sources += `<source type="image/avif" srcset="${meta.avif.map((v) => `${v.url} ${v.w}w`).join(", ")}" sizes="${s}">`;
@@ -112,8 +120,8 @@ export default function (eleventyConfig) {
       }
       if (d.category && !categoryIds.has(d.category)) errs.push(`neznámá kategorie "${d.category}"`);
       for (const key of ["image", "cardImage"]) {
-        if (d[key] && !(d[key] in IMAGES) && !String(d[key]).startsWith("/assets/")) {
-          errs.push(`obrázek "${d[key]}" není platný klíč ani cesta`);
+        if (d[key] && !isValidImage(d[key])) {
+          errs.push(`obrázek "${d[key]}" není platný klíč, cesta ani URL`);
         }
       }
       for (const t of d.topics || []) if (!topicSlugs.has(t)) errs.push(`neznámé téma "${t}"`);
@@ -161,7 +169,7 @@ export default function (eleventyConfig) {
       const errs = [];
       for (const key of ["title", "date", "excerpt", "image"]) if (!item.data[key]) errs.push(`chybí "${key}"`);
       for (const t of item.data.topics || []) if (!topicSlugs.has(t)) errs.push(`neznámé téma "${t}"`);
-      if (item.data.image && !(item.data.image in IMAGES) && !String(item.data.image).startsWith("/assets/")) errs.push(`obrázek "${item.data.image}" není platný klíč ani cesta`);
+      if (item.data.image && !isValidImage(item.data.image)) errs.push(`obrázek "${item.data.image}" není platný klíč, cesta ani URL`);
       fail(item, errs);
     }
     return items.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
@@ -169,7 +177,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("absoluteUrl", (url) => {
     const base = "https://www.rychlecistenipraha.cz";
-    return base + url;
+    if (!url) return base;
+    return /^https?:\/\//i.test(url) ? url : base + url;
   });
 
   eleventyConfig.addShortcode("icon", function (name) {

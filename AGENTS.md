@@ -154,7 +154,8 @@ Volitelná: `navTitle`, `cardImage`, `benefitsTitle`, `benefits[]`, `listTitle`,
 `pricing` (title, items[], text, note), `topics[]`, `audience[]`,
 `process[]` (title, text – **vlastní postup pro každou službu**), `priceFactors[]`,
 `equipment`, `faq[]` (q, a). `category` musí existovat v `categories.json`,
-`image`/`cardImage` musí existovat v `images.json` (nebo to být cesta), `topics` v `taxonomy.json`.
+`image`/`cardImage` musí existovat v `images.json` (nebo to být cesta `/assets/…`,
+případně **externí `http(s)://` URL** – ta se vykreslí jako prostý `<img>` bez `srcset`), `topics` v `taxonomy.json`.
 
 ### FAQ = kolekce `faq`
 `src/faq/<slug>.md` s front matter `question`, `order` a tělem = odpověď.
@@ -243,6 +244,8 @@ a v souvisejících službách.
 - **Max 3 „boxíky" v řadě** (karty, kroky, info). Reference/infobox ≤ 3 sloupců.
 - **Obrázky**: vždy přes `{% picture %}` (width/height z manifestu → bez CLS),
   `loading="lazy"` mimo LCP, `fetchpriority="high"` u hero. Fotky držet v JPEG.
+  Externí `http(s)://` URL je povolená (vykreslí se jako prostý `<img>`), aby obsah
+  vložený v CMS neshodil build; pro produkci ale preferuj nahrané obrázky.
 - **Asset odkazy** v šablonách přes `{% asset '/assets/...' %}` (cache-busting `?v=hash`).
 - **Žádné inline `style`** (CSP `style-src 'self'`).
 - **Česká typografie**: nezlomitelné mezery v cenách/telefonu (`npm run typography`).
@@ -407,6 +410,11 @@ Poznatky z modernizace webu – co nás potrápilo a jak to řešit příště.
   (System.Drawing nebo Pillow) ušetří přes 80 %.
 - **`<picture>` dej `display: contents`**, aby wrapper neovlivnil layout ani selektory `img`.
 - **Po každé změně obrázků** přegeneruj manifest (`npm run variants` → `npm run images`).
+- **Validace nesmí shodit celý web kvůli CMS.** Když klient vloží obrázek, který není
+  klíč ani `/assets/` cesta, build spadne a nenasadí se nic. Proto se **externí `http(s)://`
+  URL povoluje** (vykreslí se jako prostý `<img>`) – jeden špatný obrázek nesmí položit deploy.
+- **Externí URL nelep s doménou.** JSON-LD skládal `site.domain + image` → u externí URL
+  vznikl slepenec. Řeší filtr `absoluteUrl` (absolutní URL vrací beze změny).
 
 ### SEO a bezpečnost
 - **Cache + `immutable` bez fingerprintu = rok starý CSS.** Přidej `?v=<hash>` (`{% asset %}`).

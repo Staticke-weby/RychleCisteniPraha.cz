@@ -67,7 +67,7 @@ layout: layouts/base.njk
   "description": {{ excerpt | dump | safe }},
   "datePublished": {{ date | isoDate | dump | safe }},
   "dateModified": {{ date | isoDate | dump | safe }},
-  "image": {{ (site.domain + (image | imgSrc)) | dump | safe }},
+  "image": {{ (image | imgSrc | absoluteUrl) | dump | safe }},
   "mainEntityOfPage": {{ (site.domain + page.url) | dump | safe }},
   "author": { "@type": "Person", "name": {{ site.owner | dump | safe }}, "url": {{ (site.domain + "/kontakt/") | dump | safe }} },
   "publisher": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "logo": { "@type": "ImageObject", "url": {{ (site.domain + images.logo) | dump | safe }} } }
