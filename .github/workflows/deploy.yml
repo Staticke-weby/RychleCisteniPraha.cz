@@ -17,11 +17,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Dočasná GitHub URL = projektová stránka: https://<org>.github.io/<repo>/
-    # Proto se web staví s base path = název repozitáře.
-    # Až poběží na vlastní doméně v kořeni, změň na BASE_PATH: /
+    # Vlastní doména (GitHub Pages, kořen domény): https://www.rychlecistenipraha.cz/
+    # Na vlastní doméně se staví do kořene → BASE_PATH=/
     env:
-      BASE_PATH: /${{ github.event.repository.name }}/
+      BASE_PATH: /
     steps:
       - name: Checkout
         uses: actions/checkout@v5
