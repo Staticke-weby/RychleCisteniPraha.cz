@@ -38,7 +38,7 @@ původních textů a obrázků, rozšířený o samostatné podstránky pro jedn
 | Server | **`.htaccess`** | 301, gzip, cache, 404, HTTPS+www, HSTS, CSP |
 | Formulář | **Žádný backend** | pouze `tel:`, `mailto:`, WhatsApp |
 | CMS | **Sveltia CMS** | `/admin/`, Git backend, edituje Markdown i JSON |
-| Analytika / cookies | **Žádná** | |
+| Analytika / cookies | **Umami** (vlastní, `navstevnost.pikapod.net`) | bez cookies |
 
 **Pravidlo: minimální počet npm závislostí.** Jediná přímá devDependency je
 `@11ty/eleventy`. Nepřidávej frameworky, CSS preprocesory, JS bundlery ani
@@ -295,7 +295,8 @@ npm run check      # kontrola interních odkazů v _site (po buildu)
 - **Bez kontaktního formuláře** – jen telefon, e-mail, WhatsApp.
 - **301 přesměrování** původních Google Sites URL přes `.htaccess`.
 - **HTTPS + www**, HSTS a CSP vynuceny v `.htaccess`.
-  (CSP má `script-src 'unsafe-inline'` kvůli inline JSON-LD.)
+  (CSP má `script-src 'unsafe-inline'` kvůli inline JSON-LD a `navstevnost.pikapod.net`
+  kvůli analytice.)
 - **`.htaccess` zůstává** pro FTP/Apache. Protože GitHub Pages `.htaccess` neumí,
   jsou navíc **statické redirecty** (`src/_data/legacyRedirects.js` + `src/presmerovani.njk`
   → meta refresh + JS) a **catch-all v `main.js`** pro `/RychleCisteniPraha/*`.
@@ -318,6 +319,8 @@ npm run check      # kontrola interních odkazů v _site (po buildu)
 - **Autor článků = Radek Ingr** (schéma `Person`) kvůli E-E-A-T.
 - **Prolinkování služba ↔ lokalita** – služby odkazují na relevantní lokality (podle kategorie).
 - **Kontrast:** malý zlatý text na světlém pozadí používá `--gold-text` (tmavší) místo `--gold`.
+- **Analytika: vlastní Umami** (`navstevnost.pikapod.net`, skript v `base.njk`, bez cookies).
+  Doména je povolená v CSP (`script-src` i `connect-src`). Bez cookie lišty.
 
 ---
 
@@ -419,6 +422,8 @@ Poznatky z modernizace webu – co nás potrápilo a jak to řešit příště.
 ### SEO a bezpečnost
 - **Cache + `immutable` bez fingerprintu = rok starý CSS.** Přidej `?v=<hash>` (`{% asset %}`).
 - **CSP vs inline JSON-LD** – nutné `script-src 'unsafe-inline'` (nonce na statickém FTP nejde).
+- **CSP vs externí skript** – když přidáš analytiku/JS z jiné domény, musí být v `script-src`
+  **i** `connect-src` (skript posílá data na svůj server), jinak ho CSP zablokuje.
 - **CSP vs inline `style`** – hero pozadí řeš CSS proměnnou, ne `style="..."`.
 - **Schémata** (Service, FAQPage, Review, BreadcrumbList, LocalBusiness) zvyšují šanci
   na rich results; generuj je z kolekcí, ať nevzniká duplikace.

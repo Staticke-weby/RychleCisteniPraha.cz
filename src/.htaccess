@@ -62,7 +62,7 @@ ErrorDocument 404 /404.html
   Header set X-Content-Type-Options "nosniff"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-  Header set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'"
+  Header set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'unsafe-inline' https://navstevnost.pikapod.net; font-src 'self'; connect-src 'self' https://navstevnost.pikapod.net; form-action 'self'; frame-ancestors 'none'"
 </IfModule>
 
 # --- MIME typy ----------------------------------------------
